@@ -1,0 +1,85 @@
+
+require  'twitter'
+
+class TwitterInteract
+     
+   
+#     attr_reader :client
+    # constructor of the class
+    def initialize()
+        config = {
+            :consumer_key =>  'kotU6FQ2NGg2qresRSTqdbFwV' ,
+            :consumer_secret =>  'WGr1rGeHiJt7GEA8zQGEeYHy3k7rBKi1Qd6MTUGDuggygMy1nT' ,
+            :access_token =>  '790958439694475264-DBBVNGq4AhkOpAtrKNjNjrzhfFenK99' ,
+            :access_token_secret =>  'Do5QRy5bVsMYk9Q4BP7ImxTbIc3KCFbTgHLKcirczpcy6' 
+        }
+        @client = Twitter::REST::Client.new(config)
+        
+    end
+    # For the moment get_tweets method returns only the username and text of the tweet
+    # To add more information
+    def get_tweets(keywords)
+        tweets = @client.search("#{keywords}")
+        most_recent = tweets.take(5)
+        usernames = Array.new
+        most_recent.each do |tweet|
+            usernames.push(tweet.user.screen_name + "  " + tweet.text)
+#             puts "Tweet #{tweet.id}: #{tweet.text}"
+#             puts "User is: #{tweet.user.screen_name}" # the user's screen name
+ 
+#             puts "User is: #{tweet.user.name}" # the full name provided by user
+
+#             user = client.user(@username)
+#             puts "Location: #{user.location}"           
+        end
+        
+        return usernames
+    end
+
+    
+end
+
+
+
+# tweets = client.favorites('onedirection') 
+# most_recent = tweets.take(3)
+# most_recent.each do |tweet|
+# puts "Tweet #{tweet.id}: #{tweet.text}"
+# puts "Number of retweets: #{tweet.retweet_count}"
+# puts "Number of likes: #{tweet.favorite_count}"
+# reply_to = tweet.in_reply_to_screen_name
+# puts "This was a reply to: #{reply_to}" if !reply_to.nil?
+# puts "\n"
+# end
+
+
+#, :geocode => "53.395037,-1.473868,1000mi"
+#"#{term}", :result_type => "recent", :geocode => "#{lat},#{long},#{radius}mi")
+
+
+# most_recent.each do |tweet|
+#     @username = tweet.user.screen_name
+#     puts "Tweet #{tweet.id}: #{tweet.text}"
+#     puts "User is: #{tweet.user.screen_name}" # the user's screen name
+ 
+#     puts "User is: #{tweet.user.name}" # the full name provided by user
+
+# user = client.user(@username)
+# # puts "Screen name: #{user.screen_name}"
+# # puts "Name: #{user.name}"
+# # puts "Description: #{user.description}"
+# puts "Location: #{user.location}"
+# # puts "Following: #{user.friends_count}"
+# # puts "Followers: #{user.followers_count}"
+# # puts "Web site: #{user.website}"
+
+    
+# # reply_to = tweet.in_reply_to_screen_name
+# # puts "This was a reply to: #{reply_to}" if !reply_to.nil?
+
+# # puts "Number of retweets: #{tweet.retweet_count}"
+# # puts "Number of likes: #{tweet.favorite_count}"
+# # reply_to = tweet.in_reply_to_screen_name
+# # puts "This was a reply to: #{reply_to}" if !reply_to.nil?
+# # puts "\n"
+# end

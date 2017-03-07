@@ -1,0 +1,25 @@
+<% arraySize = @list.length %>
+<% TITLE = "Tweets" %>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style/style.css" rel="stylesheet" type="text/css" />
+<TITLE><%= TITLE %></TITLE>
+</head>
+    
+<body>
+<h1><%= TITLE %></h1>
+<table>
+    
+    <% for i in 0...arraySize %>
+    <tr>
+        <td><%= i %></td>
+        <td><%= @list[i] %></td>
+    </tr>    
+    <% end %>
+    
+</table>
+
+</ul>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-
+gem 'rake'
 #Gems needed to run the website
 gem 'sinatra'
 gem 'thin'
