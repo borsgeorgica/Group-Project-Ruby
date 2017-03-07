@@ -1,49 +1,5 @@
-/*
-        Project:		-- RestFood
-        Version:	    --
-        Create Date:	-- 10-26-16
-        Last change:	--
-        Primary use:	--
-*/
-/* 
-        --- Table Of Content ---
-        
-        
-        1. Defult CSS 
-        2. DEFAULT STYLE FOR DOWNLOAD BUTONS
-        3. DEFAULT STYLEF FOR TEXT SHADOW
-        4. DEFAULT LABEL ERROR STYLE
-        5. DEFAULT STYLES FOR LISTS
-        6. DEFAULT STYLES FOR BUTTONS
-        7. DEFAULT STYLES FOR FORM
-        8. DEFAULT STYLES FOR SOCIAL LIST
-        9. NAVBAR STYLES
-        10. SECTION VIDEO 
-        11. SECTION INTRO 
-        12. SECTION MORE INFO
-        13. SECTION SCREENSHOTS
-        14. SECTION TSTIMONIALS
-        15. SECTION FEATURES
-        16. SECTION FEATURES BOTTOM
-        17. SECTION FACTS
-        18. SECTION CONTACT
-        19. SECTION CONTACT
-        20. SECTION FOOTER TOP
-        21. SECTION PRICING
-        22. FOOTER
-        23. DEFAULT STYLES FOR OWL CAROUSEL DOTS
-        24. DEFAULT TYLES FOR INPUT PLACEHOLDERS
-        25. CANVAS ANIMATIONS
-        26. DEFAULT STYLES FOR SITE LOADER
-        27. SHORTCODES
-        28. COLOR PALETTE
-        29. Clients
-        30. BLOG
-        31. MEDIA QUERIES
-*/
-/*colors*/
-/* sass mixins*/
-/* h1-h6 global style */
+/* Spicy slice CSS file and extra help from bootstrap scripts */
+/* Team 23 */
 h1 {
   font-weight: bold;
   font-family: 'Roboto Slab', serif !important; }
@@ -1712,11 +1668,6 @@ code {
       font-size: 46px;
       font-style: italic; }
 
-/**
- * ===============================
- *  AJAX CONTENT
- * ===============================
- */
 .ajax-text-and-image {
   margin: 20px auto;
   background: white;
@@ -1755,7 +1706,7 @@ code {
  *  MEDIA QUERIES
  * ===============================
  */
-/* Medium Devices, Desktops */
+
 @media only screen and (max-width: 991px) {
   #intro .phone {
     position: static;
@@ -1811,7 +1762,7 @@ code {
   .nav li a {
     padding-left: 5px;
     padding-right: 5px; } }
-/* Small Devices, Tablets */
+
 @media only screen and (max-width: 767px) {
   .menu-item .menu-price .price {
     font-size: 36px; }
@@ -1872,7 +1823,8 @@ code {
 
   .menu-tab ul li a {
     font-size: 16px; } }
-/* Extra Small Devices, Phones */
+
+
 @media only screen and (max-width: 479px) {
   .menu-tab ul li {
     width: 50%;
@@ -1932,9 +1884,9 @@ code {
     padding: 0 15px; }
     .nav li a {
       font-size: 16px; }
-    .nav li.reservation {
+    .nav li.login {
       background: transparent !important; }
-      .nav li.reservation a {
+      .nav li.login a {
         color: white !important; }
 
   .owl-dots .owl-dot {
@@ -1952,5 +1904,3 @@ code {
   #testimonials h3 {
     line-height: 34px;
     font-size: 20px; } }
-
-/*# sourceMappingURL=style.css.map */
