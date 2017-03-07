@@ -32,36 +32,8 @@
     </head>
 
     <body>
-        <!-- HEADER -->
-        <header>
-            <nav class="navbar navbar-custom navbar-top navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- LOGO -->
-                        <a class="navbar-brand nav-logo page-scroll" href="index.html#page-top">
-                            <img src="img/logo.png" alt="Logo" width="150"> 
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html#intro">Home</a></li>
-                            <li><a href="index.html#facts">About us</a></li>
-                            <li><a href="index.html#features">Services</a></li>
-                            <li><a href="index.html#screenshots">Gallery</a></li>
-                            <li><a href="/login">Menu</a></li>
-                            <li><a href="/register">Register</a></li>
-                            <li class="login"><a class="btn btn-success" href="/login">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-        </header>
-
-
+        
+    <%= erb :header %>
 
         <!-- Opening image with the pizza -->
         <section id="intro" class="space-50 large-header text-center">
@@ -150,21 +122,7 @@
                         </div>
         </section>
 
-        <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center col-sm-12">
-                            <div class="copyright pull-left">
-                                <p>Copyright © 2017 Spicy Slice Team 23</a>.  All Rights Reserved</p>
-                            </div>
-                            <!-- FOOTER SOCIAL ICONS-->
-                            <div>
-                                <a href="twitter.com"><i class="fa fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+       <%= erb :footer %>
 
 
         <!-- SCRIPTS -->
