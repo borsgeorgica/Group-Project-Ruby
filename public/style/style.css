@@ -1668,6 +1668,11 @@ code {
       font-size: 46px;
       font-style: italic; }
 
+/**
+ * ===============================
+ *  AJAX CONTENT
+ * ===============================
+ */
 .ajax-text-and-image {
   margin: 20px auto;
   background: white;
@@ -1706,7 +1711,7 @@ code {
  *  MEDIA QUERIES
  * ===============================
  */
-
+/* Medium Devices, Desktops */
 @media only screen and (max-width: 991px) {
   #intro .phone {
     position: static;
@@ -1762,7 +1767,7 @@ code {
   .nav li a {
     padding-left: 5px;
     padding-right: 5px; } }
-
+/* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
   .menu-item .menu-price .price {
     font-size: 36px; }
@@ -1823,8 +1828,7 @@ code {
 
   .menu-tab ul li a {
     font-size: 16px; } }
-
-
+/* Extra Small Devices, Phones */
 @media only screen and (max-width: 479px) {
   .menu-tab ul li {
     width: 50%;
