@@ -361,7 +361,7 @@ label.error {
 .navbar-fixed-top .navbar-brand img {
   padding: 20px 0;
   transition: all 1s ease;
-  width: 100px; }
+  width: 200px; }
 
 .navbar {
   border: none;
@@ -1094,6 +1094,7 @@ footer {
   border-radius: 0;
   background: #242424; }
 
+
 /*navbar*/
 .navbar {
   border-radius: 0; }
@@ -1796,6 +1797,7 @@ code {
     max-height: none !important; }
 
   .navbar-brand img {
+      width:1000px;
     padding: 0 !important; }
 
   .navbar {
