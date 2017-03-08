@@ -7,33 +7,34 @@
         <meta name="author" content="Team23" />
 
         <!-- BOOTSTRAP CSS -->
-        <link href="/style/bootstrap.min.css" rel="stylesheet">
+        <link href="style/bootstrap.min.css" rel="stylesheet">
 
         <!-- MAIN STYLES CSS -->
-        <link href="/style/style.css" rel="stylesheet">
+        <link href="style/style.css" rel="stylesheet">
 
         <!-- References from online -->
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Lato%7CRoboto+Slab" rel="stylesheet">
 
         <!-- FONT ICONS -->
-        <link href="/style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
         <!-- CAROUSEL SLIDERS -->
-        <link href="/style/owl.carousel.css" rel="stylesheet" type="text/css"/>
+        <link href="style/owl.carousel.css" rel="stylesheet" type="text/css"/>
 
 
         <!-- POPUP -->
-        <link href="/style/magnific-popup.css" rel="stylesheet" type="text/css"/>
+        <link href="style/magnific-popup.css" rel="stylesheet" type="text/css"/>
 
         <!-- ANIMATE -->
-        <link href="/style/animate.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/animate.min.css" rel="stylesheet" type="text/css"/>
 
     </head>
 
     <body>
-        
-    <%= erb :header %>
+        <%= erb :header %>
+
+
 
         <!-- Opening image with the pizza -->
         <section id="intro" class="space-50 large-header text-center">
@@ -96,33 +97,326 @@
                         </p>
                     </div>
                     <div class="col-sm-6">
-                        <img src="img/bg2.jpg" alt=""/>
+                        <img src="img/bg2.png" alt=""/>
                     </div>
                 </div>
             </div>
         </section>
-
+		
+		<section id="menu1">
+			<div class="line">
+				<h2>Our Menu</h2>
+				<p> (H) -> Hot || (V) -> Vegetarian <p>
+			</div>
+		</section>
+		
         <section>
         <div class="menu-tab tab-pane fade in" id="lunch">
-                        <div class="menu-item space-10">
-                            <div class="menu-img" style="background-image: url('img/p4.jpg');">
-
-                            </div>
-                            <div class="menu-desc">
-                                <div>
-                                    <h3>Pizza Mexicana</h3>
-                                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Nullam varius a felis eu dictum.</p>
-                                </div>
-                            </div>
-                            <div class="menu-price">
-                                <div class="price">
-                                    45
-                                </div>
-                            </div>
+        <div class="text-center">
+            <p></p>
+        </div>
+        
+        	<!-- Menu Item 1 -->
+         	<div class="menu-item space-10">
+             	<div class="menu-img" style="background-image: url('img/p1.png');">
+             	</div>
+                 	<div class="menu-desc">
+                 	<div>
+                     	<h3>Milano</h3>
+                      	<p>Ventricina Salami and Prosciutto Ham.</p>
+                      	<p>Sizes: Medium, Large</p>
+                  	</div>
+                </div>
+                <div class="menu-price">
+                  <div class="price"> £13/£15 </div>
+                 </div>
+          </div> 
+          
+          
+          <!-- Menu Item 2 -->
+           	<div class="menu-item space-10">
+               	<div class="menu-img" style="background-image: url('img/p2.png');">
+               	</div>
+                   	<div class="menu-desc">
+                   	<div>
+                       	<h3>Ardente (H)</h3>
+                        	<p>Ventricina Salami, Jalapeños and Pepper Pearls. </p>
+                        	<p>Sizes: Medium, Large</p>
+                    	</div>
+                  </div>
+                  <div class="menu-price">
+                    <div class="price"> £13/£15 </div>
+                   </div>
+            </div>   
+            
+            
+           <!-- Menu Item 3 -->
+            <div class="menu-item space-10">
+               	<div class="menu-img" style="background-image: url('img/p3.png');">
+               	</div>
+                   	<div class="menu-desc">
+                   	<div>
+                       	<h3>Sicilia</h3>
+                        	<p>Chicken Breast Strips, Cajun Seasoning, Red Onions and Pepper Pearls. </p>
+                        	<p>Sizes: Medium, Large</p>
+                    	</div>
+                  </div>
+                  <div class="menu-price">
+                    <div class="price"> £13/£15 </div>
+                   </div>
+            </div>  
+            
+            <!-- Menu Item 4 -->
+             <div class="menu-item space-10">
+                	<div class="menu-img" style="background-image: url('img/p4.png');">
+                	</div>
+                    	<div class="menu-desc">
+                    	<div>
+                        	<h3>Verona</h3>
+                         	<p>Prosciutto Ham and Chicken Breast.</p>
+                         	<p>Sizes: Medium, Large</p>
+                     	</div>
+                   </div>
+                   <div class="menu-price">
+                     <div class="price"> £13/£15 </div>
+                    </div>
+             </div>
+             
+             <!-- Menu Item 5 -->
+              <div class="menu-item space-10">
+                 	<div class="menu-img" style="background-image: url('img/p5.png');">
+                 	</div>
+                     	<div class="menu-desc">
+                     	<div>
+                         	<h3>Roma (V)</h3>
+                          	<p>Goats Cheese, Red Onions and Pepper Pearls</p>
+                          	<p>Sizes: Medium, Large</p>
+                      	</div>
+                    </div>
+                    <div class="menu-price">
+                      <div class="price"> £13/£15 </div>
+                     </div>
+              </div>
+              
+              <!-- Menu Item 6 -->
+               <div class="menu-item space-10">
+                  	<div class="menu-img" style="background-image: url('img/p6.png');">
+                  	</div>
+                      	<div class="menu-desc">
+                      	<div>
+                          	<h3>Cheese and Tomato (V)</h3>
+                           	<p>Original Cheese and Tomato.</p>
+                           	<p>Sizes: Small, Medium, Large</p>
+                       	</div>
+                     </div>
+                     <div class="menu-price">
+                       <div class="price"> £10/£12/£14 </div>
+                      </div>
+               </div>
+               
+               <!-- Menu Item 7 -->
+                <div class="menu-item space-10">
+                   	<div class="menu-img" style="background-image: url('img/p7.png');">
+                   	</div>
+                       	<div class="menu-desc">
+                       	<div>
+                           	<h3>Mighty Meat</h3>
+                            	<p>Tomato sauce, Pepperoni, Ham, Ground Beef, Sausage, Red Onions, Mushrooms and Mozzarella Cheese.</p>
+                            	<p>Sizes: Small, Medium, Large</p>
+                        	</div>
+                      </div>
+                      <div class="menu-price">
+                        <div class="price"> £10/£12/£14 </div>
+                       </div>
+                </div>
+                                
+                <!-- Menu Item 8 -->
+                 <div class="menu-item space-10">
+                    	<div class="menu-img" style="background-image: url('img/p8.png');">
+                    	</div>
+                        	<div class="menu-desc">
+                        	<div>
+                            	<h3>Pepperoni passion </h3>
+                             	<p>Extra Pepperoni and Extra Mozzarella Cheese with Tomato Sauce Base.</p>
+                             	<p>Sizes: Small, Medium, Large</p>
+                         	</div>
+                       </div>
+                       <div class="menu-price">
+                         <div class="price"> £10/£12/£14 </div>
                         </div>
-        </section>
-
-       <%= erb :footer %>
+                 </div>
+                 
+                 <!-- Menu Item 9 -->
+                  <div class="menu-item space-10">
+                     	<div class="menu-img" style="background-image: url('img/p9.png');">
+                     	</div>
+                         	<div class="menu-desc">
+                         	<div>
+                             	<h3>Texas BBQ </h3>
+                              	<p>Tangy BBQ Sauce Topped with Smoky Bacon, Succulent Roast Chicken, Red Onions, Green and Red Peppers.</p>
+                              	<p>Sizes: Small, Medium, Large</p>
+                          	</div>
+                        </div>
+                        <div class="menu-price">
+                          <div class="price"> £10/£12/£14 </div>
+                         </div>
+                  </div>
+                 
+                 
+                 <!-- Menu Item 10 -->
+                  <div class="menu-item space-10">
+                     	<div class="menu-img" style="background-image: url('img/p10.png');">
+                     	</div>
+                         	<div class="menu-desc">
+                         	<div>
+                             	<h3>Vegi Supreme (V) </h3>
+                              	<p>Red Onions, Green and Red Peppers, Sweetcorn, Mushrooms and Tomatoes.</p>
+                              	<p>Sizes: Small, Medium, Large</p>
+                          	</div>
+                        </div>
+                        <div class="menu-price">
+                          <div class="price"> £10/£12/£14 </div>
+                         </div>
+                  </div>
+                 
+                 
+                 <!-- Menu Item 11 -->
+                  <div class="menu-item space-10">
+                     	<div class="menu-img" style="background-image: url('img/p11.png');">
+                     	</div>
+                         	<div class="menu-desc">
+                         	<div>
+                             	<h3>Tandoori Hot (H)</h3>
+                              	<p>Tandoori Chicken, Red Onions, Mushrooms, Green, Red and Jalapeño Peppers.</p>
+                              	<p>Sizes: Small, Medium, Large</p>
+                          	</div>
+                        </div>
+                        <div class="menu-price">
+                          <div class="price"> £10/£12/£14 </div>
+                         </div>
+                  </div>
+                 
+                 
+                 <!-- Menu Item 12 -->
+                  <div class="menu-item space-10">
+                     	<div class="menu-img" style="background-image: url('img/p12.png');">
+                     	</div>
+                         	<div class="menu-desc">
+                         	<div>
+                             	<h3>Chicken feast  </h3>
+                              	<p>Chicken, Mushrooms and Sweetcorn.</p>
+                              	<p>Sizes: Small, Medium, Large</p>
+                          	</div>
+                        </div>
+                        <div class="menu-price">
+                          <div class="price"> £10/£12/£14 </div>
+                         </div>
+                  </div>
+                 
+                 
+                 <!-- Menu Item 13 -->
+                  <div class="menu-item space-10">
+                     	<div class="menu-img" style="background-image: url('img/p13.png');">
+                     	</div>
+                         	<div class="menu-desc">
+                         	<div>
+                             	<h3>Hot And Spicy (H) </h3>
+                              	<p>Red onions, Ground Beef, Green, Red and Jalapeño peppers.</p>
+                              	<p>Sizes: Small, Medium, Large</p>
+                          	</div>
+                        </div>
+                        <div class="menu-price">
+                          <div class="price"> £10/£12/£14 </div>
+                         </div>
+                  </div>
+                 
+                 
+                 <!-- Menu Item 14 -->
+                  <div class="menu-item space-10">
+                     	<div class="menu-img" style="background-image: url('img/p14.png');">
+                     	</div>
+                         	<div class="menu-desc">
+                         	<div>
+                             	<h3>Vegi Volcano </h3>
+                              	<p>Red Onions, Green and Red peppers, Tomatoes, Jalapeño Peppers and Extra Mozzarella Cheese.</p>
+                              	<p>Sizes: Small, Medium, Large</p>
+                          	</div>
+                        </div>
+                        <div class="menu-price">
+                          <div class="price"> £10/£12/£14 </div>
+                         </div>
+                  </div>
+                  
+                  <!-- Menu Item 15 -->
+                   <div class="menu-item space-10">
+                      	<div class="menu-img" style="background-image: url('img/p15.png');">
+                      	</div>
+                          	<div class="menu-desc">
+                          	<div>
+                              	<h3>New Yorker </h3>
+                               	<p>Pepperoni, Ham, Bacon and Mushrooms.</p>
+                               	<p>Sizes: Small, Medium, Large</p>
+                           	</div>
+                         </div>
+                         <div class="menu-price">
+                           <div class="price"> £10/£12/£14 </div>
+                          </div>
+                   </div>
+          </section>
+          
+          <!-- How do i order?! -->
+          <section id="order">
+              <div class="container">
+                  <div class="text-center">
+                      <h2>How do i order?</h2>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <p>
+                              To order a pizza it is pretty simple. First you need to register a new account with your twitter handle and then you can make the order from twitter by tweeting "THIS NEEDS TO BE ADDED BECAUSE IDK HOW IT WILL WORK" </p>
+                          <p>
+                              Once you order on twitter, you can login to check the status of your order on our client panel by clicking the Login button on the navigation.
+                          </p>
+                      </div>
+                      <div class="col-sm-6">
+                          <img src="img/tweet2.png" alt=""/>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          
+		<section id="contact">
+			<div class="row">
+			    <div class="col-md-10 col-md-offset-1">
+			          <div class="row flex text-center">
+			                 <div class="col-md-4 flex">
+			                 	<div class="solidBlock double animatedItem">
+			                                    <h6 class="text-uppercase">Address</h6>
+			                                    <p>Diamond
+			                                    <br>Sheffield</p>
+			                                </div>
+			                            </div>
+			                            <div class="col-md-4 flex">
+			                            	<div class="solidBlock double animatedItem">
+			                                    <h6 class="text-uppercase">Email</h6>
+			                                    <p>info@spicyslice.com
+			                                	<br>support@dspicyslice.com</p>
+			                              </div>
+			                           </div>
+			                         <div class="col-md-4 flex">
+			                         	<div class="solidBlock double animatedItem">
+			                           	 	<h6 class="text-uppercase">Phone</h6>
+			                           		<p>+44-123-456-789
+			                           		<br>+44-123-456-777</p>
+			                        </div>
+			                     </div>
+			                 </div>
+			             </div>
+			         </div>
+			     </div>
+			 </section>
+		
+        <%= erb :footer %>
 
 
         <!-- SCRIPTS -->
