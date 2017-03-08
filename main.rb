@@ -21,7 +21,7 @@ get '/orders' do
 end
 
 get '/admin/order' do
-    erb :order
+    erb :"admin/order"
 end
 
 
@@ -58,6 +58,6 @@ get '/logout' do
 #     erb :logout
 end
 
-get '/logout-test' do
-    erb :logouttest
+get '/client/logout-test' do
+    erb :"client/logouttest"
 end
