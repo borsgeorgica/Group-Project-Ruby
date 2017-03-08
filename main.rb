@@ -57,4 +57,7 @@ get '/logout' do
     redirect '/login'
 #     erb :logout
 end
-      
+
+get '/logout-test' do
+    erb :logouttest
+end
