@@ -20,6 +20,10 @@ get '/orders' do
     erb :display_tweets
 end
 
+get '/admin/order' do
+    erb :order
+end
+
 
 get  '/index'  do
     erb :index
