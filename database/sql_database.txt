@@ -1,0 +1,19 @@
+CREATE TABLE user(
+
+TwitterUsername TEXT NOT NULL,
+
+Name TEXT,
+Surname TEXT,
+
+Password TEXT NOT NULL,
+
+Email TEXT NOT NULL,
+
+ContactNumber TEXT NOT NULL,
+
+Address TEXT NOT NULL,
+
+UNIQUE(Email,ContactNumber),
+
+PRIMARY KEY(TwitterUsername)
+);
