@@ -17,3 +17,18 @@ UNIQUE(Email,ContactNumber),
 
 PRIMARY KEY(TwitterUsername)
 );
+
+
+CREATE TABLE twitterOrders(
+Username TEXT NOT NULL,
+Tweet TEXT NOT NULL,
+Time TIMESTAMP NOT NULL,
+FOREIGN KEY(Username) REFERENCES user(TwitterUsername)
+);
+
+CREATE TABLE twitterFeedback(
+Username TEXT NOT NULL,
+Tweet TEXT NOT NULL,
+Time TIMESTAMP NOT NULL,
+FOREIGN KEY(Username) REFERENCES user(TwitterUsername)
+);
