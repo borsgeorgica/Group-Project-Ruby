@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Spicy Slice :: Client Panel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="author" content="Team23" />
+
+        <!-- BOOTSTRAP CSS -->
+        <link href="../style/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MAIN STYLES CSS -->
+        <link href="../style/style.css" rel="stylesheet">
+
+        <!-- References from online -->
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Lato%7CRoboto+Slab" rel="stylesheet">
+
+        <!-- FONT ICONS -->
+        <link href="../style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- CAROUSEL SLIDERS -->
+        <link href="../style/owl.carousel.css" rel="stylesheet" type="text/css"/>
+
+
+        <!-- POPUP -->
+        <link href="../style/magnific-popup.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ANIMATE -->
+        <link href="../style/animate.min.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body>
+        
+        <%= erb :"client/header" %>
+                
+
+		<!-- Welcome to the panel -->
+		<section id="panel-welcome">
+		            <div class="container text-center"> 
+		                <div class="row">
+		                    <div class="col-md-10 col-md-offset-1 text-center">
+		                        <h2 class="space-40 solidBlock">Welcome</h2>
+		                    </div>
+		                </div>
+		               
+		                    <!-- ITEM 1 -->
+		                    <div class="item">
+		                        <div class="user-desc">
+		                            <h3>
+		                                Welcome to your Spicy Slice Panel! You will be able to access all your information as well as orders and menu from within this panel. Order now, you are only a tweet away!
+		                            </h3>
+		                        </div>
+		                    </div>		
+		            </div>
+		        </section>
+		             
+        <!-- Order now information -->
+        
+        <section id="panel-order">
+        		<div class="line">
+        			<h2>How do i order?</h2>
+        		</div>
+        		<div class="container text-center ">
+        			<p> Spicy slice is a restaurant based on a twitter ordering system which is one of its kind. We came up with this unique idea to allow customers to quickly order a pizza with the least possible problems! </p>
+                  
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis magnam ea necessitatibus, officiis voluptas odit! Aperiam omnis, cupiditate laudantium velit nostrum.</p>
+              </div>
+          </section>
+		
+		<!-- My orders heading -->
+		  <section id="myorders">
+		  	<div class="line">
+		  	<h2> My Orders <h2>
+		  	</div>
+		  </section>  
+		  
+		        
+          <!-- My orders -->
+          <section id="order">
+              <div class="container">
+                          <p>
+                              Ordered via twitter? Great! you will find details on your order below. If it has been accepted by us or rejected due to location.</p>
+                          <p>
+                              Don't forget to order correcty!</p>
+                              
+              </div>
+              
+              <div class="menu-item space-10">
+                 	<div class="menu-img" style="background-image: url('../img/p1.png');">
+                 	</div>
+                     	<div class="menu-desc">
+                     	<div>
+                         	<h3>Milano</h3>
+                          	<p>Ventricina Salami and Prosciutto Ham.</p>
+                          	<p>Date: 12/12/12
+                          	<p>Your selected size : Medium</p>
+                      	</div>
+                    </div>
+                    <div class="menu-price">
+                      <div class="price"> Approved </div>
+                      <div class="price"> Out for delivery </div>
+                      
+                     </div>
+              </div> 
+          </section>
+          
+		<section id="contact">
+			<div class="row">
+			    <div class="col-md-10 col-md-offset-1">
+			    <div class="text-center">
+			    	<h2> Contact Us </h2>
+			    </div>
+			          <div class="row flex text-center">
+			                 <div class="col-md-4 flex">
+			                 	<div class="solidBlock double animatedItem">
+			                 		<i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
+			                                    <h6 class="text-uppercase">Address</h6>
+			                                    <p>Diamond
+			                                    <br>Sheffield</p>
+			                                </div>
+			                            </div>
+			                            <div class="col-md-4 flex">
+			                            	<div class="solidBlock double animatedItem">
+			                            	<i class="fa fa-at fa-3x" aria-hidden="true"></i>
+			                                    <h6 class="text-uppercase">Email</h6>
+			                                    <p>info@spicyslice.com
+			                                	<br>support@dspicyslice.com</p>
+			                              </div>
+			                           </div>
+			                         <div class="col-md-4 flex">
+			                         	<div class="solidBlock double animatedItem">
+			                         		<i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+			                           	 	<h6 class="text-uppercase">Phone</h6>
+			                           		<p>+44-123-456-789
+			                           		<br>+44-123-456-777</p>
+			                        </div>
+			                     </div>
+			                 </div>
+			             </div>
+			         </div>
+			     </div>
+			 </section>
+              
+		<%= erb :"client/footer" %>
+        
+            
+        <!-- SCRIPTS -->
+                <script src="../js/jquery-2.2.4.min.js" type="text/javascript"></script>
+                <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="../js/owl.carousel.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.nav.js" type="text/javascript"></script>
+                <script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.viewportchecker.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.countTo.js" type="text/javascript"></script>
+                <script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU" async defer></script>
+        
+                <!-- Loader script got help online -->
+                <script src="../js/app.js" type="text/javascript"></script>
+                <script>
+                        // Create a marker and set its position.
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: myLatLng,
+                            title: '',
+                            icon: 'img/marker1.png',
+                        });
+                    }
+                </script>
+           </body>
+</html>
