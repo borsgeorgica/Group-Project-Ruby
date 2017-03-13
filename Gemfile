@@ -8,3 +8,6 @@ gem 'thin'
 
 #Gem to use the twitter API
 gem 'twitter'
+
+#Gem to get distance using Google Maps API
+gem 'distance_finder'
