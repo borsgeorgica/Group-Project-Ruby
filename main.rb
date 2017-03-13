@@ -115,3 +115,7 @@ end
 get '/client/settings' do
     erb :"client/settings"
 end
+
+get '/admin/index' do
+    erb :"admin/index"
+end
