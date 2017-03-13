@@ -39,6 +39,8 @@ get  '/index'  do
     erb :index
 end
 
+
+
 get '/register' do
      @submitted = false
      erb :register
@@ -75,27 +77,24 @@ post '/register' do
 
     erb :register
 
+
 end
+
+
 
 get '/login' do
      erb :login
+
 end
 
 post '/login' do
-
-    unless params[:username].nil? || params[:password].nil?
-        username = params[:username].strip
-
-        @results = @db.get_first_value('SELECT Password FROM user WHERE TwitterUsername = ?', [username])
-        puts "#{@results}"
-
-        if(@results == params[:password])
-             session[:logged_in] = true
-             session[:login_time] = Time.now
-             redirect '/client/panel'
-        end
+#     puts params[:password]
+#     puts params[:username]
+    if params[:password] == 'secret' and params[:username] == 'bors'
+        session[:logged_in] = true
+        session[:login_time] = Time.now
+        redirect '/index'
     end
-
 
      @error = "Password incorrect"
      erb :login
