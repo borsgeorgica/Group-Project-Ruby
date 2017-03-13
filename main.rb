@@ -9,7 +9,7 @@ include ERB::Util
 enable :sessions
 set :session_secret, 'super secret'
 
-#set :bind, '0.0.0.0' # Only needed if you're running from Codio
+set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
 before do
     @db = SQLite3::Database.new './database/database.sqlite'
@@ -116,5 +116,10 @@ get '/client/settings' do
 end
 
 get '/admin/index' do
+    t = TwitterInteract.new()
+    t.find_tweets("@spicyslice #order") #keyword as paramater
+    @usernames = t.get_usernames()
+    @tweets_text = t.get_tweets_text()
+    
     erb :"admin/index"
 end

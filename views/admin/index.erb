@@ -1,3 +1,4 @@
+<% arraySize = @usernames.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -84,6 +85,17 @@
         		   			 <td><form><input class="button-twitter-order" type="button" value="&#10006;"/></form></td>
         		   			 <td><form><input class="button-twitter-order" type="button" value="?"/></form> </td>  
         		  		</tr>
+                        
+                        <% for i in 0...arraySize %>
+                        <tr>
+                            <td><%= @usernames[i] %></td>
+                            <td><%= @tweets_text[i] %></td>
+                            <td><form><input class="button-twitter-order" type="button" value="&#10003;"/></form> </td>
+        		   			<td><form><input class="button-twitter-order" type="button" value="&#10006;"/></form></td>
+        		   			<td><form><input class="button-twitter-order" type="button" value="?"/></form> </td>  
+                        </tr>    
+                        <% end %>
+                        
         			</table>
         		</div>
           </section> 
