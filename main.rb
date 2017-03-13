@@ -114,3 +114,7 @@ end
 get '/client/panel' do
     erb :"client/panel"
 end
+
+get '/client/settings' do
+    erb :"client/settings"
+end
