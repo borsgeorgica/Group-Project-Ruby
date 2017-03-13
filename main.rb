@@ -72,7 +72,7 @@ post '/register' do
         @db.execute(
             'INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?)',
             [@username, @name, @surname, @email, @password, @contact_number, @address])
-        redirect '/index'
+        redirect '/client/panel'
     end
     
     erb :register
