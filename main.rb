@@ -9,7 +9,7 @@ include ERB::Util
 enable :sessions
 set :session_secret, 'super secret'
 
-set :bind, '0.0.0.0' # Only needed if you're running from Codio
+#set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
 before do
     @db = SQLite3::Database.new './database/database.sqlite'
@@ -34,7 +34,6 @@ get '/admin/order' do
     erb :"admin/order"
 end
 
-
 get  '/index'  do
     erb :index
 end
@@ -58,10 +57,10 @@ post '/register' do
 
     # perform validation
     @username_ok = !@username.nil? && @username !=""
-#     count = @db.get_first_value(
-#         'SELECT COUNT(*) FROM user WHERE email = ? AND number = ?',
-#         [@email,@contact_number])
-    @unique = true #(count == 0)
+    count = @db.get_first_value(
+        'SELECT COUNT(*) FROM user WHERE email = ?',
+        [@email])
+    @unique = (count == 0)
     @all_ok = @username_ok && @unique
 
     # add data to the database
