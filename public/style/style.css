@@ -644,7 +644,7 @@ label.error {
   box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
   color: white;
   background-position: center top;
-  background-image: url("../img/panel.jpg"); }
+  background-image: url("../img/cp.jpg"); }
   #panel-welcome:before {
     content: '';
     position: absolute;
@@ -1020,6 +1020,60 @@ footer {
   z-index: -1;
   left: 0;
   right: 0; }
+  
+ 
+/**
+* ===============================
+*  Admin Panel
+* ===============================
+*/
+.twitter-order {
+  background: #242424;
+  overflow: hidden;
+  height: 156px;
+  float: center;
+  
+  }
+    th, td {
+        padding: 15px;
+    }
+
+.button-twitter-order {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+
+        }
+
+#admin-panel-welcome {
+  background-image: url("../img/adminhome.jpg");
+  position: relative;
+  padding: 100px 0;
+  background-attachment: fixed;
+  padding: 100px 0 100px;
+  background-size: cover;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+  color: white;
+  background-position: center top;
+  background-image: url("../img/ap.jpg"); }
+  #admin-panel-welcome:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5); }
+  #admin-panel-welcome > div {
+    z-index: 1;
+    position: relative; }
+  #admin-panel-welcome h3 {
+    line-height: 40px; }
+
+
 
 /**
  * ===============================
