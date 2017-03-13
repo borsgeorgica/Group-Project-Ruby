@@ -1024,6 +1024,22 @@ footer {
  
 /**
 * ===============================
+*  Client Panel
+* ===============================
+*/
+.register-error {
+		border-left: 6px solid red;
+		background-color: #FE6B6D;
+}
+
+.login-error {
+		border-left: 6px solid red;
+		background-color: #FE6B6D;
+}
+
+
+/**
+* ===============================
 *  Admin Panel
 * ===============================
 */
