@@ -123,3 +123,7 @@ get '/admin/index' do
     
     erb :"admin/index"
 end
+
+get '/admin/accepted' do
+    erb :"admin/accepted"
+end
