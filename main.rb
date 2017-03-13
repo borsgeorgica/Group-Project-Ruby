@@ -107,10 +107,6 @@ get '/logout' do
 #     erb :logout
 end
 
-get '/client/logout-test' do
-    erb :"client/logouttest"
-end
-
 get '/client/panel' do
     erb :"client/panel"
 end
