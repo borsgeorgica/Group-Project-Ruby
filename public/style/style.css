@@ -1138,6 +1138,20 @@ footer {
     color: #1c1c1c;
     width: 50%; }
 
+.searchadmin {
+    width: 130px;
+    border: none;
+    background:transparent;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+    border: none;
+    background:transparent;
+}
+
 
 /**
  * ===============================

@@ -144,3 +144,10 @@ get '/admin/accepted' do
     erb :"admin/accepted"
 end
 
+get '/admin/users' do
+    erb :"admin/users"
+end
+
+get '/admin/editusers' do
+    erb :"admin/editusers"
+end

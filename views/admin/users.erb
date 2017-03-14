@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Spicy Slice :: Users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="author" content="Team23" />
+
+        <!-- BOOTSTRAP CSS -->
+        <link href="../style/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MAIN STYLES CSS -->
+        <link href="../style/style.css" rel="stylesheet">
+
+        <!-- References from online -->
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Lato%7CRoboto+Slab" rel="stylesheet">
+
+        <!-- FONT ICONS -->
+        <link href="../style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- CAROUSEL SLIDERS -->
+        <link href="../style/owl.carousel.css" rel="stylesheet" type="text/css"/>
+
+
+        <!-- POPUP -->
+        <link href="../style/magnific-popup.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ANIMATE -->
+        <link href="../style/animate.min.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body>
+        <%= erb :"admin/header" %>
+		<!-- Welcome to the panel -->
+		<section id="admin-panel-welcome">
+		            <div class="container text-center"> 
+		                <div class="text-center">
+		                    <h2 class="">User List!</h2>
+		                    <p> Here you can find a list of all the users who have registered on this website!</p>
+		                </div>
+		            </div>
+		        </section>
+		             
+        
+        <!-- Table for showing all users + search button -->
+        <section id="Tweet-order">
+        			<div class="twitter-orders container text-center col-md-offset-1" style="width=100%">
+        			<br></br>
+        			<input class="searchadmin" type="text" name="search" placeholder="&#128269   Search..">
+        			<br></br>
+        			<table>
+        		 		 <tr>
+        		    		<th>User No.</th>
+        		    		<th>Twitter Username</th> 
+        		    		<th>First Name</th> 
+        		    		<th>Surname</th>
+        		    		<th>Email</th>
+        		    		<th>Contact Number</th>  
+        		    		<th>Edit User</th>
+        		  		</tr>
+        		 		 <tr>
+        		 		 	 <td>1</td>
+        		   			 <td>JillABC</td>
+        		   			 <td>Jill </td>
+        		   			 <td>Jill</td>
+        		    		 <td>jill@gmail.com</td>
+        		    		 <td>+4473293281131</form></td>
+        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td> 
+        		  		</tr>
+        		  		<tr>
+        		  			 <td>2</td>
+        		  			 <td>Eve123</td>
+        		  			 <td>Eve</td>
+        		  			 <td>Jackson</td>
+        		  			 <td>Eve@gmail.com</td>
+        		  			 <td>+4473293281131</form></td>
+        		  			 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td> 
+        		  			</tr>
+        		  		
+        			</table>
+          </section> 
+		  
+		        
+           <%= erb :footer %>
+          
+           </body>
+</html>
