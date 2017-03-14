@@ -119,6 +119,7 @@ get '/admin/index' do
     t = TwitterInteract.new()
     t.find_tweets("@spicyslice #order") #keyword as paramater
     @usernames = t.get_usernames()
+    # validate user name
     @tweets_text = t.get_tweets_text()
     
     erb :"admin/index"
