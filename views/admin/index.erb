@@ -65,34 +65,42 @@
         			<div class="twitter-orders container col-md-offset-1" style="width=100%">
         			<table>
         		 		 <tr>
+                            <th>Tweet No.</th>
         		    		<th>Twitter Username</th>
         		    		<th>Twitter message</th> 
+                            <th>Confirmation</th>
         		    		<th>Accept Order</th> 
         		    		<th>Decline Order</th>
-        		    		<th>Out of delivery range</th>  
+        		    		<th>Out of delivery range</th>
         		  		</tr>
         		 		 <tr>
+                             <td>1</td>
         		   			 <td>Jill</td>
         		   			 <td>This is the order message and its about this long</td>
-        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10003;"/></form> </td>
-        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10006;"/></form></td>
-        		    		 <td><form><input class="button-twitter-order" type="button" value="?"/></form> </td> 
+                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;"/></form> </td>
+        		    		 <td><form><input class="button-twitter-order" name="1" function="accept" type="button" value="&#10003;"/></form> </td>
+        		    		 <td><form><input class="button-twitter-order" name="1" function="deny" type="button" value="&#10006;"/></form></td>
+        		    		 <td><form><input class="button-twitter-order" name="1" function="delivery" type="button" value="?"/></form> </td> 
         		  		</tr>
         		  		<tr>
-        		  			  <td>Eve</td>
+                             <td>2</td>
+        		  			 <td>Eve</td>
         		   			 <td>Jackson</td>
-        		   			 <td><form><input class="button-twitter-order" type="button" value="&#10003;"/></form> </td>
-        		   			 <td><form><input class="button-twitter-order" type="button" value="&#10006;"/></form></td>
-        		   			 <td><form><input class="button-twitter-order" type="button" value="?"/></form> </td>  
+                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;"/></form> </td>
+        		   			 <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;"/></form> </td>
+        		   			 <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;"/></form></td>
+        		   			 <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="?"/></form> </td>  
         		  		</tr>
                         
                         <% for i in 0...arraySize %>
                         <tr>
+                            <td>[i]</td>
                             <td><%= @usernames[i] %></td>
                             <td><%= @tweets_text[i] %></td>
-                            <td><form><input class="button-twitter-order" type="button" value="&#10003;"/></form> </td>
-        		   			<td><form><input class="button-twitter-order" type="button" value="&#10006;"/></form></td>
-        		   			<td><form><input class="button-twitter-order" type="button" value="?"/></form> </td>  
+                            <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;"/></form> </td>
+                            <td><form><input class="button-twitter-order" name="i" function="accept" type="button" value="&#10003;"/></form> </td>
+        		   			<td><form><input class="button-twitter-order" name="i" function="deny" type="button" value="&#10006;"/></form></td>
+        		   			<td><form><input class="button-twitter-order" name="i" function="delivery" value="?"/></form> </td>  
                         </tr>    
                         <% end %>
                         
