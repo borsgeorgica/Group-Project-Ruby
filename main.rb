@@ -1,6 +1,7 @@
 
 require 'sinatra'
 require_relative 'twitter.rb'
+require_relative 'validate.rb'
 require 'sqlite3'
 
 include ERB::Util
@@ -119,12 +120,21 @@ get '/admin/index' do
     t = TwitterInteract.new()
     t.find_tweets("@spicyslice #order") #keyword as paramater
     @usernames = t.get_usernames()
-    # validate user name
     @tweets_text = t.get_tweets_text()
+    # validate user name
+    (0...@usernames.length).each do |i|
+        if(check_user_exists(@db,@usernames[i])!= true)
+            puts "Foreign user has been found"
+            @usernames.delete_at(i)
+            @tweets_text.delete_at(i)
+        end
     
+    end
+ 
     erb :"admin/index"
 end
 
+        
 get '/admin/accepted' do
     erb :"admin/accepted"
 end
