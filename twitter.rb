@@ -14,16 +14,19 @@ class TwitterInteract
             :access_token_secret =>  'Do5QRy5bVsMYk9Q4BP7ImxTbIc3KCFbTgHLKcirczpcy6' 
         }
         @client = Twitter::REST::Client.new(config)
+        @usernames = Array.new
+        @tweets_text = Array.new
         
     end
     # For the moment get_tweets method returns only the username and text of the tweet
     # To add more information
-    def get_tweets(keywords)
+    def find_tweets(keywords)
         tweets = @client.search("#{keywords}")
         most_recent = tweets.take(5)
-        usernames = Array.new
+        
         most_recent.each do |tweet|
-            usernames.push(tweet.user.screen_name + "  " + tweet.text)
+            @usernames.push(tweet.user.screen_name)
+            @tweets_text.push(tweet.text)
 #             puts "Tweet #{tweet.id}: #{tweet.text}"
 #             puts "User is: #{tweet.user.screen_name}" # the user's screen name
  
@@ -33,8 +36,19 @@ class TwitterInteract
 #             puts "Location: #{user.location}"           
         end
         
-        return usernames
+      
     end
+    
+    
+    def get_usernames() 
+        return @usernames
+        
+    end
+    
+    def get_tweets_text()
+        return @tweets_text
+    end
+    
 
     
 end

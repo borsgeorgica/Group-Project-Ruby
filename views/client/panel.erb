@@ -49,23 +49,33 @@
 		                    <div class="item">
 		                        <div class="user-desc">
 		                            <h3>
-		                                Welcome to your Spicy Slice Panel! You will be able to access all your information as well as orders and menu from within this panel. Order now, you are only a tweet away!
+		                                Welcome [name] to your Spicy Slice Panel! You will be able to access all your information as well as orders and menu from within this panel. Order now, you are only a tweet away!
 		                            </h3>
 		                        </div>
 		                    </div>		
 		            </div>
 		        </section>
-		             
-        <!-- Order now information -->
-        
+
+
         <section id="panel-order">
         		<div class="line">
         			<h2>How do i order?</h2>
         		</div>
         		<div class="container text-center ">
+              <br></br>
         			<p> Spicy slice is a restaurant based on a twitter ordering system which is one of its kind. We came up with this unique idea to allow customers to quickly order a pizza with the least possible problems! </p>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis magnam ea necessitatibus, officiis voluptas odit! Aperiam omnis, cupiditate laudantium velit nostrum.</p>
+             <p>To make an order, you need to go to twitter and tweet in the following format "<span>@spicyslice [size] [pizza type] #order</span>". For example "@spicyslice Large Tomato & Cheese Pizza #order"</p>
+              </div>
+          </section>
+
+          <section id="panel-order">
+            <div class="line">
+              <h3>You have <span>200</span> Points in your account!</h3>
+            </div>
+            <br></br>
+            <div class="container text-center ">
+              <p> For every 200 Points you get a free pizza! </p>
+              <p> Have you hit 200 Points? Simply tweet <span>@SpicySlice [size] [pizza type] [200] #order</span> to get a free pizza!</p>
               </div>
           </section>
 		
@@ -77,16 +87,23 @@
 		  </section>  
 		  
 		        
-          <!-- My orders -->
+          <!-- How do i order -->
           <section id="order">
               <div class="container">
-                          <p>
-                              Ordered via twitter? Great! you will find details on your order below. If it has been accepted by us or rejected due to location.</p>
-                          <p>
-                              Don't forget to order correcty!</p>
-                              
+              <br></br>
+                  <p>
+                    Ordered via twitter? Great! you will find details on your order below. If it has been accepted by us or rejected due to location.</p>
+                   <p>
+                    Don't forget to order correcty!</p>              
               </div>
-              
+              <br></br>
+
+              <!-- If no order then use this div -->
+              <div class="text-center container menu-desc space-10">
+                <h3> <span> You do not have any orders yet! Go on to twitter and order! </span> </h3>
+              </div>
+
+              <!-- If pizza orders then use this to display their order -->
               <div class="menu-item space-10">
                  	<div class="menu-img" style="background-image: url('../img/p1.png');">
                  	</div>
@@ -143,7 +160,7 @@
 			     </div>
 			 </section>
               
-		<%= erb :"client/footer" %>
+		<%= erb :footer %>
         
             
         <!-- SCRIPTS -->
