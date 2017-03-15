@@ -94,13 +94,13 @@
                         
                         <% for i in 0...arraySize %>
                         <tr>
-                            <td>[i]</td>
+                            <td><%= i%></td>
                             <td><%= @usernames[i] %></td>
                             <td><%= @tweets_text[i] %></td>
-                            <td><form><input class="button-twitter-order" name="i" function="confirm" type="button" value="&#8634;"/></form> </td>
-                            <td><form><input class="button-twitter-order" name="i" function="accept" type="button" value="&#10003;"/></form> </td>
-        		   			<td><form><input class="button-twitter-order" name="i" function="deny" type="button" value="&#10006;"/></form></td>
-        		   			<td><form><input class="button-twitter-order" name="i" function="delivery" value="&#128269"/></form> </td>  
+                            <td><form method = "POST"><input class="button-twitter-order" name= "1"  check = "confirm" function= "confirm" type="submit" value="&#8634;"/></form> </td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;"/></form> </td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;"/></form></td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" function="delivery" value="&#128269"/></form> </td>  
                         </tr>    
                         <% end %>
                         

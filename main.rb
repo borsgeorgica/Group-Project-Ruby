@@ -139,6 +139,17 @@ get '/admin/index' do
     erb :"admin/index"
 end
 
+post '/admin/index' do
+   
+    if params[:check] == nil
+        puts "nil ................."
+       
+    end
+#     name = params[:value].strip
+#     puts "#{name}"
+    redirect '/admin/index'
+end
+
         
 get '/admin/accepted' do
     erb :"admin/accepted"
