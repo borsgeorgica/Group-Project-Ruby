@@ -141,8 +141,12 @@ end
 
 post '/admin/index' do
    
-    if params[:check] == nil
+    @check = params[:check]
+    @function = params[:function]
+    if @check == "confirm" && @function == "confirm"
         puts "nil ................."
+    else
+        puts "lol......... It worked ;)"
        
     end
 #     name = params[:value].strip
