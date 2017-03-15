@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-gem 'rake'
+    gem 'rake'
 #Gems needed to run the website
-gem 'sinatra'
-gem 'thin'
+    gem 'sinatra'
+    gem 'thin'
 
 #Gem to use the twitter API
-gem 'twitter'
+    gem 'twitter'
 
 #Gem to get distance using Google Maps API
-gem 'distance_finder'
+    gem 'distance_finder'
+
+#Gems needed for testing
+    gem 'cucumber'
+    gem 'capybara'
+    gem 'rspec'
+    gem 'simplecov'
