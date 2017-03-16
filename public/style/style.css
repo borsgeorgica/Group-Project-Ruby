@@ -1156,6 +1156,36 @@ input[type=text]:focus {
     background:transparent;
 }
 
+.competitionwin {
+    background-color: transparent;
+    border: 2px solid green;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.competitionwin:hover {
+    background-color: green; 
+    color: white;
+}
+
+.clearComp {
+    background-color: transparent;
+    border: 2px solid red;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.clearComp:hover {
+    background-color: red;
+    color: white;
+}
 
 /**
  * ===============================

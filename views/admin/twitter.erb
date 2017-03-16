@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Spicy Slice :: Twitter Panel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="author" content="Team23" />
+
+        <!-- BOOTSTRAP CSS -->
+        <link href="../style/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MAIN STYLES CSS -->
+        <link href="../style/style.css" rel="stylesheet">
+
+        <!-- References from online -->
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Lato%7CRoboto+Slab" rel="stylesheet">
+
+        <!-- FONT ICONS -->
+        <link href="../style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- CAROUSEL SLIDERS -->
+        <link href="../style/owl.carousel.css" rel="stylesheet" type="text/css"/>
+
+
+        <!-- POPUP -->
+        <link href="../style/magnific-popup.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ANIMATE -->
+        <link href="../style/animate.min.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body>
+        <%= erb :"admin/header" %>
+        
+        <section id="AcceptOrder">
+            <div class="container text-center">
+                <div class="text-center">
+                    <h2 class="">Welcome to your twitter panel!</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="form-wrapper space-60">
+                            <div id="response"></div>
+                            <form method="POST"  id="contact-form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group"><input class="form-control" type="text" name="tweet" placeholder="Tweet message"></div>
+                                    </div>
+                                   
+                            	</div>
+                                <div class="form-group"><input class="btn btn-success" type="submit" value="Tweet it!"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <section id="Tweet-order">
+        		<div class="line">
+        			<h2>All extra tweets shown below!</h2>
+        		</div>
+        		<div class="row">
+        			<div class="twitter-orders container col-md-offset-1">
+        			<table>
+        		 		 <tr>
+        		 		 	<th>Date &amp; Time </th>
+        		    		<th>Twitter Username</th>
+        		    		<th>Twitter Message</th> 
+        		  		</tr>
+        		 		 <tr>
+        		 		 	 <td>02/02/2017</td>	
+        		   			 <td>Jill</td>
+        		   			 <td>Got the best pizzas from spicy slice! Love it</td>	   
+        		  		</tr>
+        		  		
+        		  		<tr>
+        		  			 <td>03/03/2017</td>
+        		  			 <td>Eve</td>
+        		   			 <td>Fastest delivery with the best update system! Love it!</td>
+        		   		</tr>
+        		  		
+        			</table>
+        		</div>
+          </section> 
+		  
+          <section id="Tweet-order">
+                <div class="line">
+                    <h2>Competition tweets!</h2>
+                </div>
+                <div class="row">
+                    <div class="twitter-orders container col-md-offset-1">
+                    <br></br>
+                    <input class="clearComp" type="submit" name="clearComp" value="Click to clear the competition log">
+                    <input class="competitionwin" type="submit" name="competition" value="Click to Randomly choose a winner!">
+                    <br></br>
+
+                    <table>
+                         <tr>
+                            <th>Tweet Number</th>
+                            <th>Date &amp; Time</th>
+                            <th>Twitter Username</th>
+                            <th>Twitter Message</th>
+
+                        </tr>
+                         <tr>
+                             <td>1</td>
+                             <td>02/02/2017</td>    
+                             <td>Jill</td>
+                             <td>I wish i win the free pizza's @WinSpicySlice</td>    
+                        </tr>
+                        
+                        <tr>
+                             <td>2</td>
+                             <td>03/03/2017</td>
+                             <td>Eve</td>
+                             <td>This will be delicious #WinSpicySlice</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+          </section> 
+		        
+           <%= erb :footer %>
+            
+           </body>
+</html>

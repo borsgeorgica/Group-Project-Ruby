@@ -156,3 +156,7 @@ end
 get '/admin/editusers' do
     erb :"admin/editusers"
 end
+
+get '/admin/twitter' do
+    erb :"admin/twitter"
+end
