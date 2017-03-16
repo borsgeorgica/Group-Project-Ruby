@@ -17,19 +17,11 @@ before do
 
 end
 
-
 get '/' do
     redirect '/login' unless session[:logged_in]
     erb :index
 
 end
-
-
-# get '/orders' do
-#     t = TwitterInteract.new()
-#     @list = t.get_tweets("@spicyslice #order") #keyword as paramater
-#     erb :display_tweets
-# end
 
 get '/admin/order' do
     erb :"admin/order"
@@ -145,8 +137,6 @@ post '/admin/index' do
     @function = params[:function]
     if @check == "confirm" && @function == "confirm"
         puts "nil ................."
-    else
-        puts "lol......... It worked ;)"
        
     end
 #     name = params[:value].strip
