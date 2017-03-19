@@ -50,7 +50,7 @@ h6 {
 
 /**
  * ===============================
- *  DEFAULT CSS 
+ *  DEFAULT CSS
  * ===============================
  */
 body {
@@ -96,7 +96,7 @@ a {
 p {
   letter-spacing: 2px;
   font-size: 15px; }
-  
+
 .center p {
 	text-align: center;
 }
@@ -296,9 +296,9 @@ label.error {
   .form-control:-ms-input-placeholder {
     color: #7d7d7d;
     opacity: 1; }
-    
+
 .dropdown {
-	
+
 	height:  50px;
 }
 
@@ -424,7 +424,7 @@ label.error {
 
 /**
  * ===============================
- *  SECTION VIDEO 
+ *  SECTION VIDEO
  * ===============================
  */
 .videoWrapper {
@@ -444,7 +444,7 @@ label.error {
 
 /**
  * ===============================
- *  SECTION INTRO 
+ *  SECTION INTRO
  * ===============================
  */
 .header-carousel {
@@ -521,7 +521,7 @@ label.error {
 #more-info {
   padding-bottom: 100px;
   padding-top: 50px; }
- 
+
 #menu1 {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -540,6 +540,9 @@ label.error {
   color: red;
 }
 
+#order span {
+  color: red;
+}
 /**
  * ===============================
  *  SECTION SCREENSHOTS
@@ -921,9 +924,9 @@ footer {
     background: #7d7d7d;
     color: #1c1c1c;
     width: 50%; }
-    
-    
- 
+
+
+
 
 #contact-form {
   margin-top: 20px; }
@@ -1032,8 +1035,8 @@ footer {
   z-index: -1;
   left: 0;
   right: 0; }
-  
- 
+
+
 /**
 * ===============================
 *  Client Panel
@@ -1060,7 +1063,7 @@ footer {
   overflow: hidden;
   height: 156px;
   float: center;
-  
+
   }
     th, td {
         padding: 15px;
@@ -1074,7 +1077,7 @@ footer {
             overflow: hidden;
 
         }
-  
+
 
 #admin-panel-welcome {
   background-image: url("../img/adminhome.jpg");
@@ -1167,7 +1170,7 @@ input[type=text]:focus {
     font-size: 16px;
 }
 .competitionwin:hover {
-    background-color: green; 
+    background-color: green;
     color: white;
 }
 
@@ -1673,7 +1676,7 @@ code {
 	overflow: hidden;
 	height: auto;
 	text-align: center;
-	
+
 }
 .menu-item {
   background: #242424;

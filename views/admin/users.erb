@@ -35,15 +35,15 @@
         <%= erb :"admin/header" %>
 		<!-- Welcome to the panel -->
 		<section id="admin-panel-welcome">
-		            <div class="container text-center"> 
+		            <div class="container text-center">
 		                <div class="text-center">
 		                    <h2 class="">User List!</h2>
 		                    <p> Here you can find a list of all the users who have registered on this website!</p>
 		                </div>
 		            </div>
 		        </section>
-		             
-        
+
+
         <!-- Table for showing all users + search button -->
         <section id="Tweet-order">
         			<div class="twitter-orders container text-center col-md-offset-1" style="width=100%">
@@ -53,12 +53,13 @@
         			<table>
         		 		 <tr>
         		    		<th>User No.</th>
-        		    		<th>Twitter Username</th> 
-        		    		<th>First Name</th> 
+        		    		<th>Twitter Username</th>
+        		    		<th>First Name</th>
         		    		<th>Surname</th>
         		    		<th>Email</th>
-        		    		<th>Contact Number</th>  
-                            <th>Points</th>
+                    <th>Postcode</th>
+        		    		<th>Contact Number</th>
+                    <th>Points</th>
         		    		<th>Edit User</th>
         		  		</tr>
         		 		 <tr>
@@ -67,9 +68,10 @@
         		   			 <td>Jill </td>
         		   			 <td>Jill</td>
         		    		 <td>jill@gmail.com</td>
+                     <td>S7 2AR</td>
         		    		 <td>+4473293281131</form></td>
-                             <td>0</td>
-        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td> 
+                      <td>0</td>
+        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td>
         		  		</tr>
         		  		<tr>
         		  			 <td>2</td>
@@ -77,16 +79,17 @@
         		  			 <td>Eve</td>
         		  			 <td>Jackson</td>
         		  			 <td>Eve@gmail.com</td>
+                     <td>S7 2AR</td>
         		  			 <td>+4473293281131</form></td>
-                             <td>0</td>
-        		  			 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td> 
+                      <td>0</td>
+        		  			 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td>
         		  			</tr>
-        		  		
+
         			</table>
-          </section> 
-		  
-		        
+          </section>
+
+
            <%= erb :footer %>
-          
+
            </body>
 </html>
