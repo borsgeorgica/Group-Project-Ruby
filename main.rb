@@ -1,6 +1,6 @@
 
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require_relative 'twitter.rb'
 require_relative 'validate.rb'
 require 'sqlite3'
