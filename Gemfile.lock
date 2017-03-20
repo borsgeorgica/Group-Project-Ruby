@@ -126,6 +126,7 @@ DEPENDENCIES
   capybara
   cucumber
   distance_finder
+  minitest
   rake
   rspec
   simplecov

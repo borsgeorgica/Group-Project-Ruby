@@ -116,15 +116,6 @@ get '/admin/index' do
     t.find_tweets("@spicyslice #order") #keyword as paramater
     @usernames = t.get_usernames()
     @tweets_text = t.get_tweets_text()
-    # validate user name(NEEDS TO BE FIXED - CRASHES ADMIN)
-  #  (0...@usernames.length).each do |i|
-  #         puts "Foreign user has been found"
-  #          @usernames.delete_at(i)
-  #          @tweets_text.delete_at(i)
-  #      end
-
-  #  end
-
     erb :"admin/index"
 end
 
