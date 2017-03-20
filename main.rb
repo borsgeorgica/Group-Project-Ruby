@@ -28,9 +28,6 @@ get '/' do
 
 end
 
-get '/admin/order' do
-    erb :"admin/order"
-end
 
 get  '/index'  do
     erb :index
@@ -68,7 +65,7 @@ post '/register' do
         @db.execute(
             'INSERT INTO personal_details VALUES (?, ?, ?, ?, ?, ?)',
             [@username, @name, @surname, @email , @contact_number, @address])
-        
+
          @db.execute(
             'INSERT INTO log_in VALUES (?, ?, ?)',
             [@username,  @password, @user_level])
@@ -162,6 +159,7 @@ get '/admin/index' do
     t.find_tweets("@spicyslice #order") #keyword as paramater
     @usernames = t.get_usernames()
     @tweets_text = t.get_tweets_text()
+
     # validate user name
     
     (0...@usernames.length).each do |i|
@@ -179,23 +177,24 @@ get '/admin/index' do
     
     end
  
+
     erb :"admin/index"
 end
 
 post '/admin/index' do
-   
+
     @check = params[:check]
     @function = params[:function]
     if @check == "confirm" && @function == "confirm"
         puts "nil ................."
-       
+
     end
 #     name = params[:value].strip
 #     puts "#{name}"
     redirect '/admin/index'
 end
 
-        
+
 get '/admin/accepted' do
     erb :"admin/accepted"
 end
