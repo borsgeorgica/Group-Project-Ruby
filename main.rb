@@ -13,8 +13,12 @@ set :session_secret, 'super secret'
 
 set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
+
 before do
     @db = SQLite3::Database.new './database/database_new.sqlite'
+    
+    
+    
 
 end
 
@@ -88,8 +92,12 @@ post '/login' do
         puts "#{@results}"
 
         if(@results == params[:password])
+            
              session[:logged_in] = true
              session[:login_time] = Time.now
+            
+             
+                
              redirect '/client/panel'
         end
     end
@@ -114,18 +122,60 @@ get '/client/settings' do
     erb :"client/settings"
 end
 
+post '/client/settings' do
+    
+    @submitted = true
+    @username = "bors_georgica"
+    @email = params[:email].strip
+    @password = params[:password].strip
+    @contact_number = params[:tel].strip
+    @post_code = params[:postcode].strip
+    @address = params[:address].strip
+
+    # perform validation
+    @username_ok = !@username.nil? && @username !=""
+
+    @all_ok = @username_ok
+    @user_level = 2
+
+    # add data to the database
+    if @all_ok
+
+        @db.execute(
+            'UPDATE personal_details SET Email = ?, ContactNumber =  ?, Address =  ? WHERE TwitterUsername = ?',
+            [@email , @contact_number, @address,@username])
+        
+         @db.execute(
+            'UPDATE log_in SET Password = ? WHERE TwitterUsername = ?',
+            [@password, @username])
+        redirect '/client/panel'
+        
+    end
+    
+    
+    erb :"client/settings"
+end
+    
+
 get '/admin/index' do
     t = TwitterInteract.new()
     t.find_tweets("@spicyslice #order") #keyword as paramater
     @usernames = t.get_usernames()
     @tweets_text = t.get_tweets_text()
     # validate user name
+    
     (0...@usernames.length).each do |i|
-        if(check_user_exists(@db,@usernames[i])!= true)
-            puts "Foreign user has been found"
-            @usernames.delete_at(i)
-            @tweets_text.delete_at(i)
+        if(@usernames[i]!=nil)
+            if(check_user_exists(@db,@usernames[i])!= true)
+                puts "Foreign user has been found"
+                @usernames.delete_at(i)
+                @tweets_text.delete_at(i)
+            end
+        else
+            # send back a tweet to the user and ask to register first
+            # in order to make an ordder
         end
+        
     
     end
  
