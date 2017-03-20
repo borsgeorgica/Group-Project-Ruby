@@ -159,8 +159,7 @@ get '/admin/index' do
     t.find_tweets("@spicyslice #order") #keyword as paramater
     @usernames = t.get_usernames()
     @tweets_text = t.get_tweets_text()
-
-    # validate user name
+      # validate user name
     
     (0...@usernames.length).each do |i|
         if(@usernames[i]!=nil)
@@ -177,8 +176,7 @@ get '/admin/index' do
         
     
     end
- 
-
+  
     erb :"admin/index"
 end
 
