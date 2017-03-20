@@ -12,6 +12,27 @@ module NavigationHelpers
       '/index'
     when /the login\s?page/
       '/login'
+    when /the register\s?page/
+      '/register'
+    when /the panel\s?page/
+      '/client/panel'
+    when /the logout\s?page/
+      '/logout'
+    when /the settings\s?page/
+      '/client/settings'
+    when /the order\s?page/
+      '/admin/order'
+    when /the admin\s?page/
+      '/admin/index'
+    when /the accepted\s?page/
+      '/admin/accepted'
+    when /the users\s?page/
+      '/admin/users'
+    when /the editusers\s?page/
+      '/admin/editusers'
+    when /the twitter\s?page/
+      '/admin/twitter'
+   
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

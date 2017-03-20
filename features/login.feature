@@ -1,26 +1,23 @@
 Feature: login
-
-  Scenario: home page
-    Given I am on the homepage
-    Then I should see "Home About us Menu Order Contact us Register Login"
     
   Scenario: Correct password
     Given I am on the loginpage
+    Then I should see "You already have this value" within "form"
     When I fill in "username" with "secret"
     When I fill in "password" with "secret"
-    When I press "submit" within "form"
+    When I press "login_button" within "form"
     Then I should see "Welcome"
+    Then I should be on the panelpage
     
   Scenario: Incorrect password
     Given I am on the loginpage
+    Then I should see "You already have this value" within "form"
     When I fill in "username" with "secret"
     When I fill in "password" with "nonsense"
-    When I press "submit" within "form"
-    Then I should see "Incorrect password"
+    When I press "login_button" within "form"
+    Then I should see "Password incorrect"
+    Then I should be on the loginpage
    
-  Scenario: Invalid username
-    Given I am on the loginpage
-    When I fill in "username" with "nonsense"
-    Then I should see "Invalid username"
+    
     
       
