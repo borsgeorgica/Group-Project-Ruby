@@ -34,16 +34,16 @@
 
     <body>
         <%= erb :"admin/header" %>
-        
+
 		<!-- Welcome to the panel -->
 		<section id="admin-panel-welcome">
-		            <div class="container text-center"> 
+		            <div class="container text-center">
 		                <div class="row">
 		                    <div class="col-md-10 col-md-offset-1">
 		                        <h2 class="space-40 solidBlock">Admin Panel</h2>
 		                    </div>
 		                </div>
-		               
+
 		                    <!-- ITEM 1 -->
 		                    <div class="item">
 		                        <div class="user-desc">
@@ -51,12 +51,12 @@
 		                               Welcome to the Admin panel, using this panel you will be able to access all orders, accept them, decline them and many other features using twitter. Everything on the panel itself!
 		                            </h3>
 		                        </div>
-		                    </div>		
+		                    </div>
 		            </div>
 		        </section>
-		             
+
         <!-- Order now information -->
-        
+
         <section id="Tweet-order">
         		<div class="line">
         			<h2>Current Twitter Orders</h2>
@@ -67,9 +67,9 @@
         		 		 <tr>
                             <th>Tweet No.</th>
         		    		<th>Twitter Username</th>
-        		    		<th>Twitter message</th> 
+        		    		<th>Twitter message</th>
                             <th>Confirmation</th>
-        		    		<th>Accept Order</th> 
+        		    		<th>Accept Order</th>
         		    		<th>Decline Order</th>
         		    		<th>Out of delivery range</th>
         		  		</tr>
@@ -80,7 +80,7 @@
                              <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;" onclick="confirm()"/></form> </td>
         		    		 <td><form><input class="button-twitter-order" name="1" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
         		    		 <td><form><input class="button-twitter-order" name="1" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
-        		    		 <td><form><input class="button-twitter-order" name="1" function="delivery" type="button" value="&#128269" onclick="tooFar()"/></form> </td> 
+        		    		 <td><form><input class="button-twitter-order" name="1" function="delivery" type="button" value="&#128269" onclick="tooFar()"/></form> </td>
         		  		</tr>
         		  		<tr>
                              <td>2</td>
@@ -89,9 +89,9 @@
                              <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;" onclick="confirm()"/></form> </td>
         		   			 <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
         		   			 <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
-        		   			 <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269" onclick="tooFar()"/></form> </td>  
+        		   			 <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269" onclick="tooFar()"/></form> </td>
         		  		</tr>
-                        
+
                         <% for i in 0...arraySize %>
                         <tr>
                             <td><%= i%></td>
@@ -100,17 +100,17 @@
                             <td><form method = "POST"><input class="button-twitter-order" name= "1"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/></form> </td>
                             <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
         		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269" onclick="notFar()"/></form> </td>  
-                        </tr>    
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269" onclick="notFar()"/></form> </td>
+                        </tr>
                         <% end %>
-                        
+
         			</table>
         		</div>
-          </section> 
-		  
-		        
+          </section>
+
+
           <%= erb :footer %>
-            
+
         <!-- SCRIPTS -->
                 <script src="../js/jquery-2.2.4.min.js" type="text/javascript"></script>
                 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -121,7 +121,7 @@
                 <script src="../js/jquery.viewportchecker.min.js" type="text/javascript"></script>
                 <script src="../js/jquery.countTo.js" type="text/javascript"></script>
                 <script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU" async defer></script>
-        
+
                 <!-- Loader script got help online -->
                 <script src="../js/app.js" type="text/javascript"></script>
                 <script>
