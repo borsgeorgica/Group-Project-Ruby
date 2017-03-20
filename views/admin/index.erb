@@ -77,18 +77,18 @@
                              <td>1</td>
         		   			 <td>Jill</td>
         		   			 <td>This is the order message and its about this long</td>
-                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;"/></form> </td>
-        		    		 <td><form><input class="button-twitter-order" name="1" function="accept" type="button" value="&#10003;"/></form> </td>
-        		    		 <td><form><input class="button-twitter-order" name="1" function="deny" type="button" value="&#10006;"/></form></td>
-        		    		 <td><form><input class="button-twitter-order" name="1" function="delivery" type="button" value="&#128269"/></form> </td> 
+                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;" onclick="confirm()"/></form> </td>
+        		    		 <td><form><input class="button-twitter-order" name="1" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
+        		    		 <td><form><input class="button-twitter-order" name="1" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
+        		    		 <td><form><input class="button-twitter-order" name="1" function="delivery" type="button" value="&#128269" onclick="tooFar()"/></form> </td> 
         		  		</tr>
         		  		<tr>
                              <td>2</td>
         		  			 <td>Eve</td>
         		   			 <td>Jackson</td>
-                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;"/></form> </td>
-        		   			 <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;"/></form> </td>
-        		   			 <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;"/></form></td>
+                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;" onclick="confirm()"/></form> </td>
+        		   			 <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
+        		   			 <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
         		   			 <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269" onclick="tooFar()"/></form> </td>  
         		  		</tr>
                         
@@ -97,10 +97,10 @@
                             <td><%= i%></td>
                             <td><%= @usernames[i] %></td>
                             <td><%= @tweets_text[i] %></td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "1"  check = "confirm" function= "confirm" type="submit" value="&#8634;"/></form> </td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;"/></form> </td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;"/></form></td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269"/></form> </td>  
+                            <td><form method = "POST"><input class="button-twitter-order" name= "1"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/></form> </td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269" onclick="notFar()"/></form> </td>  
                         </tr>    
                         <% end %>
                         
@@ -135,8 +135,32 @@
                     }
                 </script>
                 <script>
+                function notFar() {
+                    alert("Delivery is possible to this user");
+                }
                 function tooFar() {
                     alert("This user is out of range");
+                }
+                function confirm() {
+                    alert("A confirmation tweet was sent");
+                    /* This code should send a tweet to the user when completed
+                     * It's commented to prevent spam
+                     * client.update('@bors_georgica please confirm your order')
+                     */
+                }
+                function accept() {
+                    alert("An acceptance tweet was sent");
+                    /* This code should send a tweet to the user when completed
+                     * It's commented to prevent spam
+                     * client.update('@bors_georgica your order is confirmed')
+                     */
+                }
+                function decline() {
+                    alert("A decline tweet was sent");
+                    /* This code should send a tweet to the user when completed
+                     * It's commented to prevent spam
+                     * client.update('@bors_georgica We're very sorry but we have to cancel the order')
+                     */
                 }
                 </script>
            </body>
