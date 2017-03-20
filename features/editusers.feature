@@ -9,5 +9,5 @@ Feature: editusers
     When I fill in "number" with "tel"
     When I fill in "postcode" with "postcode"
     When I fill in "address" with "address"
-    When I press "Submit" within "form"
-    Then I should be on the adminpage
+    When I press "Update Account" within "form"
+    Then I should be on the edituserspage
