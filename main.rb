@@ -3,7 +3,11 @@ require 'sinatra'
 #require 'sinatra/reloader'
 require_relative 'twitter.rb'
 require_relative 'validate.rb'
+
 require 'sqlite3'
+
+require_relative 'login.rb'
+require_relative 'register.rb'
 
 include ERB::Util
 
@@ -16,10 +20,9 @@ set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
 before do
     @db = SQLite3::Database.new './database/database_new.sqlite'
-    
-    
-    
-
+    @twitter = TwitterInteract.new()
+    $current_username
+        
 end
 
 get '/' do
@@ -27,7 +30,6 @@ get '/' do
     erb :index
 
 end
-
 
 get  '/index'  do
     erb :index
@@ -49,30 +51,12 @@ post '/register' do
     @password = params[:password].strip
     @contact_number = params[:number].strip
     @address = params[:address].strip
-
-    # perform validation
-    @username_ok = !@username.nil? && @username !=""
-    count = @db.get_first_value(
-        'SELECT COUNT(*) FROM personal_details WHERE email = ?',
-        [@email])
-    @unique = (count == 0)
-    @all_ok = @username_ok && @unique
-    @user_level = 2
-
-    # add data to the database
-    if @all_ok
-
-        @db.execute(
-            'INSERT INTO personal_details VALUES (?, ?, ?, ?, ?, ?)',
-            [@username, @name, @surname, @email , @contact_number, @address])
-
-         @db.execute(
-            'INSERT INTO log_in VALUES (?, ?, ?)',
-            [@username,  @password, @user_level])
+    
+    if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@address))
         redirect '/client/panel'
+    else
+        erb :register
     end
-
-    erb :register
 
 end
 
@@ -84,34 +68,30 @@ post '/login' do
 
     unless params[:username].nil? || params[:password].nil?
         username = params[:username].strip
+        password = params[:password].strip    
 
-        @results = @db.get_first_value('SELECT Password FROM log_in WHERE TwitterUsername = ?', [username])
-        puts "#{@results}"
-
-        if(@results == params[:password])
+        if(login(@db,username,password))
             
              session[:logged_in] = true
              session[:login_time] = Time.now
-            
-             
-                
+             $current_username = username
+  
              redirect '/client/panel'
+        else
+            @error = "Password incorrect"
+            erb :login
         end
-    end
-
-
-     @error = "Password incorrect"
-     erb :login
-
+    end   
 end
 
 get '/logout' do
     session.clear
     redirect '/login'
-#     erb :logout
+
 end
 
 get '/client/panel' do
+    @user = $current_username
     erb :"client/panel"
 end
 
@@ -122,43 +102,29 @@ end
 post '/client/settings' do
     
     @submitted = true
-    @username = "bors_georgica"
+    @username = $current_username
     @email = params[:email].strip
     @password = params[:password].strip
     @contact_number = params[:tel].strip
     @post_code = params[:postcode].strip
     @address = params[:address].strip
 
-    # perform validation
-    @username_ok = !@username.nil? && @username !=""
-
-    @all_ok = @username_ok
-    @user_level = 2
+   
 
     # add data to the database
-    if @all_ok
-
-        @db.execute(
-            'UPDATE personal_details SET Email = ?, ContactNumber =  ?, Address =  ? WHERE TwitterUsername = ?',
-            [@email , @contact_number, @address,@username])
-        
-         @db.execute(
-            'UPDATE log_in SET Password = ? WHERE TwitterUsername = ?',
-            [@password, @username])
+    if (update_details(@db,@username, @email, @password, @contact_number,@post_code, @address))
         redirect '/client/panel'
-        
-    end
-    
-    
-    erb :"client/settings"
+    else
+        erb :"client/settings"
+    end 
 end
     
 
 get '/admin/index' do
-    t = TwitterInteract.new()
-    t.find_tweets("@spicyslice #order") #keyword as paramater
-    @usernames = t.get_usernames()
-    @tweets_text = t.get_tweets_text()
+    
+    @twitter.find_tweets("@spicyslice") #keyword as paramater
+    @usernames = @twitter.get_usernames()
+    @tweets_text = @twitter.get_tweets_text()
       # validate user name
     
     (0...@usernames.length).each do |i|
@@ -167,27 +133,28 @@ get '/admin/index' do
                 puts "Foreign user has been found"
                 @usernames.delete_at(i)
                 @tweets_text.delete_at(i)
+                # send back a tweet to the user and ask to register first
+                # in order to make an ordder
+           
             end
         else
-            # send back a tweet to the user and ask to register first
-            # in order to make an ordder
-            # This will be completed in second iteration 
+            puts "nothing found bg pl"
         end
-        
-    
     end
   
     erb :"admin/index"
 end
 
 post '/admin/index' do
+    
+     @check = params[:button]
+     @function = params[:confirm]
+     puts @check
+     puts @function
+   
+    
+  
 
-    @check = params[:check]
-    @function = params[:function]
-    if @check == "confirm" && @function == "confirm"
-        puts "nil ................."
-
-    end
 #     name = params[:value].strip
 #     puts "#{name}"
     redirect '/admin/index'
