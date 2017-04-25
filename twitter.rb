@@ -29,14 +29,7 @@ class TwitterInteract
         most_recent.each do |tweet|
             @usernames.push(tweet.user.screen_name)
             @tweets_text.push(tweet.text)
- 
             
-            puts "User is: #{tweet.user.screen_name}" # the user's screen name
- 
-#             puts "User is: #{tweet.user.name}" # the full name provided by user
-
-#             user = client.user(@username)
-#             puts "Location: #{user.location}"           
         end
         
       

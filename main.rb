@@ -160,9 +160,7 @@ post '/admin/index' do
         
         
      end
-   
-    
-  
+
 
 #     name = params[:value].strip
 #     puts "#{name}"
