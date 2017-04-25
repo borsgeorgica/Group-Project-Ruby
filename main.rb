@@ -55,6 +55,7 @@ post '/register' do
     if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@address))
         redirect '/client/panel'
     else
+        @error = true
         erb :register
     end
 
@@ -78,7 +79,7 @@ post '/login' do
   
              redirect '/client/panel'
         else
-            @error = "Password incorrect"
+            @error = true
             erb :login
         end
     end   

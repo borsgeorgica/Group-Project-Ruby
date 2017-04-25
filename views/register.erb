@@ -47,7 +47,9 @@
                             <form method="POST" id="contact-form">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="register-error"> <p> You already have this value </p> </div>
+                                        <% if @error %>
+                                        <div class="register-error"> <p> Please check one or more values again </p> </div>
+                                        <% end %>
                                         <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Twitter Username" required></div>
                                     </div>
                                     <div class="col-md-12">
