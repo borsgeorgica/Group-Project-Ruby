@@ -70,6 +70,10 @@
         		    		<th>Twitter Username</th>
         		    		<th>Twitter message</th>
                             <th>Confirmation</th>
+                            <th>Confirmation Status</th>
+        		    		<th>Accept Order</th>
+        		    		<th>Decline Order</th>
+        		    		<th>Out of delivery range</th>
         		  		</tr>
         		 		<!--  <tr>
                     <td>1</td>
@@ -96,6 +100,10 @@
                             <td><%= @usernames[i-1] %></td>
                             <td><%= @tweets_text[i-1] %></td>
                             <td><form method = "POST"><input class="button-twitter-order" name= "confirmation"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "confirm" /></form> </td>
+                            <td>Not Confirmed</td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "accept" /></form> </td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "deny" /></form></td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "delivery" /></form> </td>
                         </tr>
                         <% end %>
 
@@ -116,17 +124,11 @@
                     <th>Tweet No.</th>
                             <th>Twitter Username</th>
                             <th>Twitter message</th>
-                            <th>Accept Order</th>
-                            <th>Decline Order</th>
-                            <th>Out of delivery range</th>
                         </tr>
                  <tr>
                              <td>1</td>
                              <td>Jill</td>
                              <td>I confirm this order #Confirm</td>
-                             <td><form><input class="button-twitter-order" name="1" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
-                             <td><form><input class="button-twitter-order" name="1" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
-                             <td><form><input class="button-twitter-order" name="1" function="delivery" type="button" value="&#128269"/></form> </td>
                         </tr>
                     <!-- <tr>
                     <td>2</td>
