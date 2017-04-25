@@ -29,7 +29,7 @@ class TwitterInteract
         most_recent.each do |tweet|
             @usernames.push(tweet.user.screen_name)
             @tweets_text.push(tweet.text)
-           
+ 
             
             puts "User is: #{tweet.user.screen_name}" # the user's screen name
  
@@ -43,12 +43,12 @@ class TwitterInteract
     end
     
     def send_confirmation_tweet (username)
-        ##
-        #
+        @client.update("@#{username} Please confirm your order")
     end
     
     
     def get_usernames() 
+   
         return @usernames
         
     end

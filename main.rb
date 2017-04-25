@@ -22,6 +22,7 @@ before do
     @db = SQLite3::Database.new './database/database_new.sqlite'
     @twitter = TwitterInteract.new()
     $current_username
+    $usernames
         
 end
 
@@ -142,6 +143,8 @@ get '/admin/index' do
             puts "nothing found bg pl"
         end
     end
+    
+    $usernames = @usernames
   
     erb :"admin/index"
 end
@@ -150,8 +153,13 @@ post '/admin/index' do
     
      @button = params[:button]
      @number = params[:number]
-     puts @button
-     puts @number
+     
+     
+     if(@button == "confirm")
+         @twitter.send_confirmation_tweet($usernames[@number.to_i])
+        
+        
+     end
    
     
   
