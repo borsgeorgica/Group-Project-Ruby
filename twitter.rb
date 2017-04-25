@@ -1,4 +1,5 @@
-
+# Have to add more methods
+# Twitter API
 require  'twitter'
 
 class TwitterInteract
@@ -21,14 +22,16 @@ class TwitterInteract
     # For the moment get_tweets method returns only the username and text of the tweet
     # To add more information
     def find_tweets(keywords)
+         
         tweets = @client.search("#{keywords}")
         most_recent = tweets.take(5)
         
         most_recent.each do |tweet|
             @usernames.push(tweet.user.screen_name)
             @tweets_text.push(tweet.text)
-#             puts "Tweet #{tweet.id}: #{tweet.text}"
-#             puts "User is: #{tweet.user.screen_name}" # the user's screen name
+ 
+            
+            puts "User is: #{tweet.user.screen_name}" # the user's screen name
  
 #             puts "User is: #{tweet.user.name}" # the full name provided by user
 
@@ -39,8 +42,13 @@ class TwitterInteract
       
     end
     
+    def send_confirmation_tweet (username)
+        @client.update("@#{username} Please confirm your order")
+    end
+    
     
     def get_usernames() 
+   
         return @usernames
         
     end

@@ -47,7 +47,9 @@
                             <form method="POST"  id="contact-form" action = "login">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="login-error"> <p> You already have this value </p> </div>
+                                        <% if @error %>
+                                        <div class="login-error"> <p> You have entered an incorrect username/password. Please try again</p> </div>
+                                        <% end %>
                                         <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Twitter Username" required></div>
                                     </div>
                                     <div class="col-md-12">
