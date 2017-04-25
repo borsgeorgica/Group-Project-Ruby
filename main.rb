@@ -140,7 +140,13 @@ get '/admin/index' do
            
             end
         else
+<<<<<<< HEAD
+            # send back a tweet to the user and ask to register first
+            # in order to make an order
+            # This will be completed in second iteration 
+=======
             puts "nothing found bg pl"
+>>>>>>> 6a54a72f3a764e83c8dfc4ff8bb40683cfc87ecf
         end
     end
     
