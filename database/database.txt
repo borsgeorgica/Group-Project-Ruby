@@ -1,0 +1,132 @@
+CREATE TABLE user_level(
+
+ULKey INTEGER,
+
+UserLevel TEXT,
+
+UNIQUE(UserLevel),
+
+PRIMARY KEY (ULKey)
+
+);
+
+
+CREATE TABLE log_in(
+
+TwitterUsername TEXT,
+
+Password TEXT,
+
+ULKey INTEGER,
+
+PizzaPoints INTEGER,
+FOREIGN KEY(ULKey) REFERENCES user_level(ULKey)
+
+PRIMARY KEY(TwitterUsername)
+
+);
+
+
+CREATE TABLE personal_details(
+
+TwitterUsername TEXT,
+
+Name TEXT,
+
+Surname TEXT,
+
+Email TEXT,
+
+ContactNumber TEXT,
+
+Address TEXT,
+
+StoreLocation TEXT,
+FOREIGN KEY(TwitterUsername) REFERENCES log_in(TwitterUsername)
+
+);
+
+CREATE TABLE pizza_info(
+
+PizzaID INTEGER,
+
+PizzaName TEXT,
+
+Ingredients TEXT,
+
+PRIMARY KEY(PizzaID)
+
+);
+
+
+CREATE TABLE pizza_size(
+
+SizeID INTEGER,
+
+Size TEXT,
+
+Price INTEGER,
+
+PizzaPoints INTEGER,
+PRIMARY KEY(SizeID)
+
+);
+
+
+CREATE TABLE menu(
+
+ItemID INTEGER NOT NULL,
+
+PizzaID INTEGER,
+
+SizeID INTEGER,
+
+FOREIGN KEY(PizzaID) REFERENCES pizza_info(PizzaID),
+
+FOREIGN KEY(SizeID) REFERENCES pizza_size(SizeID),
+
+PRIMARY KEY(ItemID)
+
+);
+
+
+CREATE TABLE orders(
+
+OrderID INTEGER NOT NULL,
+TwitterUsername TEXT,
+PizzaID INTEGER,
+
+StatusID INTEGER,
+
+PRIMARY KEY(OrderID),
+
+FOREIGN KEY(TwitterUsername) REFERENCES log_in(TwitterUsername),
+
+FOREIGN KEY(PizzaID) REFERENCES pizza_info(PizzaID),
+
+FOREIGN KEY(StatusID) REFERENCES pizza_status(StatusID)
+
+);
+
+CREATE TABLE pizza_status(
+
+StatusID INTEGER NOT NULL,
+
+StatusDescription TEXT,
+
+PRIMARY KEY(StatusID)
+
+);
+
+
+CREATE TABLE feedback(
+
+FeedbackID INTEGER NOT NULL,
+
+TwitterUsername TEXT,
+
+Feedback TEXT,
+
+PRIMARY KEY(FeedbackID)
+
+);
