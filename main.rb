@@ -170,7 +170,7 @@ get '/admin/index' do
             end
         else
             # send back a tweet to the user and ask to register first
-            # in order to make an ordder
+            # in order to make an order
             # This will be completed in second iteration 
         end
         
