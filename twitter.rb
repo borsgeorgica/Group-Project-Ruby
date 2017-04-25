@@ -42,6 +42,11 @@ class TwitterInteract
       
     end
     
+    def send_confirmation_tweet (username)
+        ##
+        #
+    end
+    
     
     def get_usernames() 
         return @usernames

@@ -98,7 +98,7 @@
                             <td><%= i%></td>
                             <td><%= @usernames[i-1] %></td>
                             <td><%= @tweets_text[i-1] %></td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "confirmation"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/><input type="hidden" name="confirm" value= "<%=i%>" /><input type="hidden" name="button" value= "confirm" /></form> </td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "confirmation"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/><input type="hidden" name="number" value= "<%=i%>" /><input type="hidden" name="button" value= "confirm" /></form> </td>
                             <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/><input type="hidden" name="accept" value= "valoare" /></form> </td>
         		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/><input type="hidden" name="deny" value= "valoare" /></form></td>
         		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269"/><input type="hidden" name="delivery" value= "valoare" /></form> </td>

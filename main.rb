@@ -147,10 +147,10 @@ end
 
 post '/admin/index' do
     
-     @check = params[:button]
-     @function = params[:confirm]
-     puts @check
-     puts @function
+     @button = params[:button]
+     @number = params[:number]
+     puts @button
+     puts @number
    
     
   
