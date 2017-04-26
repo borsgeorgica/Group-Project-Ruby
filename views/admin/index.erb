@@ -6,6 +6,7 @@
         <title>Spicy Slice :: Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="author" content="Team23" />
+        <meta http-equiv="refresh" content="10">
 
         <!-- BOOTSTRAP CSS -->
         <link href="../style/bootstrap.min.css" rel="stylesheet">
@@ -68,12 +69,13 @@
                     <th>Tweet No.</th>
         		    		<th>Twitter Username</th>
         		    		<th>Twitter message</th>
-                    <th>Confirmation</th>
+                            <th>Confirmation</th>
+                            <th>Confirmation Status</th>
         		    		<th>Accept Order</th>
         		    		<th>Decline Order</th>
         		    		<th>Out of delivery range</th>
         		  		</tr>
-        		 		 <tr>
+        		 		<!--  <tr>
                     <td>1</td>
         		   			 <td>Jill</td>
         		   			 <td>This is the order message and its about this long</td>
@@ -90,17 +92,18 @@
         		   			 <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
         		   			 <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
         		   			 <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269"/></form> </td>
-        		  		</tr>
+        		  		</tr> -->
 
-                        <% for i in 0...arraySize %>
+                        <% for i in 1...arraySize+1 %>
                         <tr>
                             <td><%= i%></td>
-                            <td><%= @usernames[i] %></td>
-                            <td><%= @tweets_text[i] %></td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "1"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/></form> </td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269"/></form> </td>
+                            <td><%= @usernames[i-1] %></td>
+                            <td><%= @tweets_text[i-1] %></td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "confirmation"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "confirm" /></form> </td>
+                            <td>Not Confirmed</td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "accept" /></form> </td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "deny" /></form></td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "delivery" /></form> </td>
                         </tr>
                         <% end %>
 
@@ -108,6 +111,38 @@
         		</div>
           </section>
 
+          <br>
+
+          <section id="Tweet-order">
+                <div class="line">
+                    <h2>Confirmed Tweet Orders</h2>
+                </div>
+                <div class="row">
+                    <div class="twitter-orders container col-md-offset-1" style="width=100%">
+                    <table>
+                         <tr>
+                    <th>Tweet No.</th>
+                            <th>Twitter Username</th>
+                            <th>Twitter message</th>
+                        </tr>
+                 <tr>
+                             <td>1</td>
+                             <td>Jill</td>
+                             <td>I confirm this order #Confirm</td>
+                        </tr>
+                    <!-- <tr>
+                    <td>2</td>
+                             <td>Eve</td>
+                             <td>Jackson</td>
+                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;" onclick="confirm()"/></form> </td>
+                             <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
+                             <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
+                             <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269"/></form> </td>
+                        </tr> -->
+
+                    </table>
+                </div>
+          </section>
 
           <%= erb :footer %>
 

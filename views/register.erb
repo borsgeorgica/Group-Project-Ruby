@@ -47,7 +47,9 @@
                             <form method="POST" id="contact-form">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="register-error"> <p> You already have this value </p> </div>
+                                        <% if @error %>
+                                        <div class="register-error"> <p> Please check one or more values again </p> </div>
+                                        <% end %>
                                         <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Twitter Username" required></div>
                                     </div>
                                     <div class="col-md-12">
@@ -68,6 +70,17 @@
                                     <div class="col-md-12">
                                         <div class="form-group"><input class="form-control" type="postcode" name="postcode" style='text-transform:uppercase' maxlength="6" placeholder="Postcode" required></div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group>">
+                                        <select class="form-control dropdown" type="location" name="location"  required>
+                                        <option value="" disabled selected>Location</option>
+                                            <option value="London">London</option>
+                                            <option value="Sheffield">Sheffield</option>
+                                        </select>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    
                                     <div class="col-md-12">
                                         <div class="form-group"><textarea class="form-control" name="address" id="address" cols="30" rows="8" placeholder="Full Address" required></textarea></div>
                                     </div>
