@@ -1,7 +1,7 @@
 # Register
 #
 
-def register_user (db, username, name, surname, email, password, contact_number, address)
+def register_user (db, username, name, surname, email, password, contact_number,storelocation, address)
     # perform some sort of validation
     username_ok = !username.nil? && username !=""
     count = db.get_first_value(
@@ -15,12 +15,12 @@ def register_user (db, username, name, surname, email, password, contact_number,
     if all_ok
 
         db.execute(
-            'INSERT INTO personal_details VALUES (?, ?, ?, ?, ?, ?)',
-            [username, name, surname, email , contact_number, address])
+            'INSERT INTO personal_details VALUES (?, ?, ?, ?, ?, ?, ?)',
+            [username, name, surname, email , contact_number,storelocation, address])
 
          db.execute(
-            'INSERT INTO log_in VALUES (?, ?, ?)',
-            [username,  password, user_level])
+            'INSERT INTO log_in VALUES (?, ?, ?, ?)',
+            [username,  password, user_level, 0])
         return true
     else
         return false
