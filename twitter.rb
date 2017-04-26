@@ -3,6 +3,10 @@
 require  'twitter'
 
 class TwitterInteract
+    
+    def title
+        "Tweet to order"
+    end
      
    
 #     attr_reader :client
