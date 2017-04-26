@@ -78,7 +78,6 @@ post '/login' do
              session[:logged_in] = true
              session[:login_time] = Time.now
              $current_username = username
-  
              redirect '/client/panel'
         else
             @error = true
@@ -95,6 +94,8 @@ end
 
 get '/client/panel' do
     @user = $current_username
+    redirect '/login' unless session[:logged_in]
+
     erb :"client/panel"
 end
 
