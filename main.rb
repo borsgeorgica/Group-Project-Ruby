@@ -19,7 +19,7 @@ set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
 
 before do
-    @db = SQLite3::Database.new './database/database_new.sqlite'
+    @db = SQLite3::Database.new './database/database_final.sqlite'
     @twitter = TwitterInteract.new()
     $current_username
     $usernames
@@ -51,9 +51,10 @@ post '/register' do
     @email = params[:email].strip
     @password = params[:password].strip
     @contact_number = params[:number].strip
+    @storelocation = params[:location].strip
     @address = params[:address].strip
     
-    if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@address))
+    if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@storelocation,@address))
         redirect '/client/panel'
     else
         @error = true
@@ -109,12 +110,13 @@ post '/client/settings' do
     @password = params[:password].strip
     @contact_number = params[:tel].strip
     @post_code = params[:postcode].strip
+    @storelocation = params[:location].strip
     @address = params[:address].strip
 
    
 
     # add data to the database
-    if (update_details(@db,@username, @email, @password, @contact_number,@post_code, @address))
+    if (update_details(@db,@username, @email, @password, @contact_number,@post_code,@storelocation, @address))
         redirect '/client/panel'
     else
         erb :"client/settings"
@@ -148,9 +150,13 @@ get '/admin/index' do
             end
         else
 
+
             # send back a tweet to the user and ask to register first
             # in order to make an order
             # This will be completed in second iteration 
+
+
+            
 
         end
     end
