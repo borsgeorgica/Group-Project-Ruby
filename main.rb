@@ -133,6 +133,13 @@ get '/admin/index' do
         if(@usernames[i]!=nil)
             if(check_user_exists(@db,@usernames[i])!= true)
                 puts "Foreign user has been found"
+                
+                if @tweets_text[i].include? "confirm"
+                    puts "String includes 'cde'"
+                else
+                    puts "nu contine"
+                end
+
                 @usernames.delete_at(i)
                 @tweets_text.delete_at(i)
                 # send back a tweet to the user and ask to register first
@@ -140,13 +147,11 @@ get '/admin/index' do
            
             end
         else
-<<<<<<< HEAD
+
             # send back a tweet to the user and ask to register first
             # in order to make an order
             # This will be completed in second iteration 
-=======
-            puts "nothing found bg pl"
->>>>>>> 6a54a72f3a764e83c8dfc4ff8bb40683cfc87ecf
+
         end
     end
     
