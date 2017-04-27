@@ -9,4 +9,4 @@ Feature: settings
     When I fill in "postcode" with "postcode"
     When I fill in "address" with "address"
     When I press "Update settings" within "form"
-    Then I should be on the panelpage
+    Then I should be on the settingspage
