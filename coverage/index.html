@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-20T09:26:08+00:00">2017-03-20T09:26:08+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-27T20:00:53+00:00">2017-04-27T20:00:53+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">32.38%</span></span>
+    (<span class="covered_percent"><span class="red">67.79%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.32
+       <span class="green">
+         2.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>3</b> files in total.
-    <b>105</b> relevant lines. 
-    <span class="green"><b>34</b> lines covered</span> and
-    <span class="red"><b>71</b> lines missed </span>
+    <b>5</b> files in total.
+    <b>149</b> relevant lines. 
+    <span class="green"><b>101</b> lines covered</span> and
+    <span class="red"><b>48</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,23 +51,43 @@
     <tbody>
       
       <tr>
+        <td class="strong"><a href="#58766e6f85bf161a4e82fa9e2573fe2cab908b1a" class="src_link" title="login.rb">login.rb</a></td>
+        <td class="red strong">42.86 %</td>
+        <td>39</td>
+        <td>14</td>
+        <td>6</td>
+        <td>8</td>
+        <td>0.6</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#a592dc6f6cda6f9a54e6132d085af3b5bdf1c320" class="src_link" title="main.rb">main.rb</a></td>
-        <td class="red strong">32.14 %</td>
-        <td>163</td>
-        <td>84</td>
-        <td>27</td>
-        <td>57</td>
-        <td>0.3</td>
+        <td class="red strong">75.51 %</td>
+        <td>190</td>
+        <td>98</td>
+        <td>74</td>
+        <td>24</td>
+        <td>2.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#5d08d71949662affde8911b91cfb877092247115" class="src_link" title="register.rb">register.rb</a></td>
+        <td class="red strong">72.73 %</td>
+        <td>32</td>
+        <td>11</td>
+        <td>8</td>
+        <td>3</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#66f31721ddc4e6b5477c7be6a20d7c9d5da31a38" class="src_link" title="twitter.rb">twitter.rb</a></td>
-        <td class="red strong">35.29 %</td>
-        <td>99</td>
-        <td>17</td>
-        <td>6</td>
-        <td>11</td>
-        <td>0.4</td>
+        <td class="red strong">54.55 %</td>
+        <td>111</td>
+        <td>22</td>
+        <td>12</td>
+        <td>10</td>
+        <td>5.5</td>
       </tr>
       
       <tr>
@@ -96,14 +116,266 @@
     
       <div class="source_files">
       
+        <div class="source_table" id="58766e6f85bf161a4e82fa9e2573fe2cab908b1a">
+  <div class="header">
+    <h3>login.rb</h3>
+    <h4><span class="red">42.86 %</span> covered</h4>
+    <div>
+      <b>14</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>8</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># login</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"># got to add encryption</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def login (db, username, password)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">     results = db.get_first_value(&#39;SELECT Password FROM log_in WHERE TwitterUsername = ?&#39;, [username])</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">     if(results == password)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">         return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">     else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">         return false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def update_details(db, username, email, password, contact_number, post_code, address)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">     # perform validation</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    username_ok = !username.nil? &amp;&amp; username !=&quot;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">    all_ok = username_ok</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
+          
+          <code class="ruby">    user_level = 2</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    # add data to the database</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">    if all_ok</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">        db.execute(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">            &#39;UPDATE personal_details SET Email = ?, ContactNumber =  ?, Address =  ? WHERE TwitterUsername = ?&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">            [email , contact_number, address,username])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">         db.execute(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">            &#39;UPDATE log_in SET Password = ? WHERE TwitterUsername = ?&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">            [password, username])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">        return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
+          
+          <code class="ruby">        return false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="a592dc6f6cda6f9a54e6132d085af3b5bdf1c320">
   <div class="header">
     <h3>main.rb</h3>
-    <h4><span class="red">32.14 %</span> covered</h4>
+    <h4><span class="red">75.51 %</span> covered</h4>
     <div>
-      <b>84</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
-      <span class="red"><b>57</b> lines missed.</span>
+      <b>98</b> relevant lines. 
+      <span class="green"><b>74</b> lines covered</span> and
+      <span class="red"><b>24</b> lines missed.</span>
     </div>
   </div>
   
@@ -140,46 +412,46 @@
           <code class="ruby">require_relative &#39;validate.rb&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">require &#39;sqlite3&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">include ERB::Util</code>
+          <code class="ruby">require_relative &#39;login.rb&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">enable :sessions</code>
+          <code class="ruby">require_relative &#39;register.rb&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">set :session_secret, &#39;super secret&#39;</code>
+          <code class="ruby">include ERB::Util</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -188,40 +460,40 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">set :bind, &#39;0.0.0.0&#39; # Only needed if you&#39;re running from Codio</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">enable :sessions</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">before do</code>
+          <code class="ruby">set :session_secret, &#39;super secret&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="17">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @db = SQLite3::Database.new &#39;./database/database_new.sqlite&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">set :bind, &#39;0.0.0.0&#39; # Only needed if you&#39;re running from Codio</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -233,73 +505,73 @@
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">get &#39;/&#39; do</code>
+          <code class="ruby">before do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
+        <li class="covered" data-hits="28" data-linenumber="22">
+          <span class="hits">28</span>
           
-          
-          <code class="ruby">    redirect &#39;/login&#39; unless session[:logged_in]</code>
+          <code class="ruby">    @db = SQLite3::Database.new &#39;./database/database_final.sqlite&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="covered" data-hits="28" data-linenumber="23">
+          <span class="hits">28</span>
           
-          
-          <code class="ruby">    erb :index</code>
+          <code class="ruby">    @twitter = TwitterInteract.new()</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="28" data-linenumber="24">
+          <span class="hits">28</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    $current_username</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="28" data-linenumber="25">
+          <span class="hits">28</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">    $usernames</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
-          
-          <code class="ruby">get &#39;/admin/order&#39; do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
-          
-          <code class="ruby">    erb :&quot;admin/order&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">get  &#39;/index&#39;  do</code>
+          <code class="ruby">get &#39;/&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
+          
+          <code class="ruby">    redirect &#39;/login&#39; unless session[:logged_in]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
           <code class="ruby">    erb :index</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
@@ -317,169 +589,169 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">get &#39;/register&#39; do</code>
+          <code class="ruby">get  &#39;/index&#39;  do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">     @submitted = false</code>
+          <code class="ruby">    erb :index</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
-          
-          <code class="ruby">     erb :register</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">post &#39;/register&#39; do</code>
+          <code class="ruby">get &#39;/register&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="41">
+        <li class="covered" data-hits="4" data-linenumber="40">
+          <span class="hits">4</span>
           
+          <code class="ruby">     @submitted = false</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="41">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @submitted = true</code>
+          <code class="ruby">     erb :register</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">    # sanatize values</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    @username = params[:username].strip</code>
+          <code class="ruby">post &#39;/register&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="covered" data-hits="3" data-linenumber="45">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    @name = params[:name].strip</code>
+          <code class="ruby">    @submitted = true</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
-          
-          
-          <code class="ruby">    @surname = params[:surname].strip</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="47">
-          
-          
-          <code class="ruby">    @email = params[:email].strip</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="48">
-          
-          
-          <code class="ruby">    @password = params[:password].strip</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="49">
-          
-          
-          <code class="ruby">    @contact_number = params[:number].strip</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="50">
-          
-          
-          <code class="ruby">    @address = params[:address].strip</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">    # perform validation</code>
+          <code class="ruby">    # sanatize values</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="covered" data-hits="3" data-linenumber="48">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    @username_ok = !@username.nil? &amp;&amp; @username !=&quot;&quot;</code>
+          <code class="ruby">    @username = params[:username].strip</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="covered" data-hits="3" data-linenumber="49">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    count = @db.get_first_value(</code>
+          <code class="ruby">    @name = params[:name].strip</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="covered" data-hits="3" data-linenumber="50">
+          <span class="hits">3</span>
           
+          <code class="ruby">    @surname = params[:surname].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="51">
+          <span class="hits">3</span>
           
-          <code class="ruby">        &#39;SELECT COUNT(*) FROM personal_details WHERE email = ?&#39;,</code>
+          <code class="ruby">    @email = params[:email].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="52">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @password = params[:password].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="53">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @contact_number = params[:number].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="54">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @storelocation = params[:location].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="55">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @address = params[:address].strip</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">        [@email])</code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="57">
+        <li class="covered" data-hits="3" data-linenumber="57">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    @unique = (count == 0)</code>
+          <code class="ruby">    if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@storelocation,@address))</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">    @all_ok = @username_ok &amp;&amp; @unique</code>
+          <code class="ruby">        redirect &#39;/client/panel&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">    @user_level = 2</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="covered" data-hits="3" data-linenumber="60">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        @error = true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="covered" data-hits="3" data-linenumber="61">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    # add data to the database</code>
+          <code class="ruby">        erb :register</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">    if @all_ok</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
@@ -488,70 +760,70 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">        @db.execute(</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">            &#39;INSERT INTO personal_details VALUES (?, ?, ?, ?, ?, ?)&#39;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            [@username, @name, @surname, @email , @contact_number, @address])</code>
+          <code class="ruby">get &#39;/login&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="covered" data-hits="4" data-linenumber="67">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">        </code>
+          <code class="ruby">     erb :login</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">         @db.execute(</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">            &#39;INSERT INTO log_in VALUES (?, ?, ?)&#39;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            [@username,  @password, @user_level])</code>
+          <code class="ruby">post &#39;/login&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
-          
-          
-          <code class="ruby">        redirect &#39;/client/panel&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="74">
+        <li class="covered" data-hits="2" data-linenumber="72">
+          <span class="hits">2</span>
           
+          <code class="ruby">    unless params[:username].nil? || params[:password].nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="73">
+          <span class="hits">2</span>
           
-          <code class="ruby">    erb :register</code>
+          <code class="ruby">        username = params[:username].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="74">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        password = params[:password].strip    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -560,244 +832,244 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="covered" data-hits="2" data-linenumber="76">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">        if(login(@db,username,password))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">get &#39;/login&#39; do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="79">
-          
-          
-          <code class="ruby">     erb :login</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
-          
-          <code class="ruby">post &#39;/login&#39; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="84">
-          
-          
-          <code class="ruby">    unless params[:username].nil? || params[:password].nil?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="85">
-          
-          
-          <code class="ruby">        username = params[:username].strip</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="87">
-          
-          
-          <code class="ruby">        @results = @db.get_first_value(&#39;SELECT Password FROM log_in WHERE TwitterUsername = ?&#39;, [username])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="88">
-          
-          
-          <code class="ruby">        puts &quot;#{@results}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="89">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="90">
-          
-          
-          <code class="ruby">        if(@results == params[:password])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="91">
-          
-          
           <code class="ruby">             session[:logged_in] = true</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="92">
-          
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
           
           <code class="ruby">             session[:login_time] = Time.now</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="93">
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
+          <code class="ruby">             $current_username = username</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
           <code class="ruby">             redirect &#39;/client/panel&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
+          <code class="ruby">            @error = true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">            erb :login</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    end   </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">     @error = &quot;Password incorrect&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="99">
-          
-          
-          <code class="ruby">     erb :login</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="103">
+        <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
           <code class="ruby">get &#39;/logout&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="104">
-          
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
           
           <code class="ruby">    session.clear</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="105">
-          
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
           
           <code class="ruby">    redirect &#39;/login&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">#     erb :logout</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="109">
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
           <code class="ruby">get &#39;/client/panel&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="110">
+        <li class="covered" data-hits="2" data-linenumber="96">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    erb :&quot;client/panel&quot;</code>
+          <code class="ruby">    @user = $current_username</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="covered" data-hits="2" data-linenumber="97">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">    redirect &#39;/login&#39; unless session[:logged_in]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="113">
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    erb :&quot;client/panel&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
           <code class="ruby">get &#39;/client/settings&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="114">
-          
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
           
           <code class="ruby">    erb :&quot;client/settings&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
+          
+          <code class="ruby">post &#39;/client/settings&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="108">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @submitted = true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @username = $current_username</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @email = params[:email].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @password = params[:password].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="112">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @contact_number = params[:tel].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="113">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @post_code = params[:postcode].strip</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="114">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @storelocation = params[:location].strip</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="115">
+          
+          
+          <code class="ruby">    @address = params[:address].strip</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="116">
@@ -806,76 +1078,76 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="117">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="117">
           
-          <code class="ruby">get &#39;/admin/index&#39; do</code>
+          
+          <code class="ruby">   </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="118">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
-          <code class="ruby">    t = TwitterInteract.new()</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
-          <code class="ruby">    t.find_tweets(&quot;@spicyslice #order&quot;) #keyword as paramater</code>
+          <code class="ruby">    # add data to the database</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="120">
           
           
-          <code class="ruby">    @usernames = t.get_usernames()</code>
+          <code class="ruby">    if (update_details(@db,@username, @email, @password, @contact_number,@post_code,@storelocation, @address))</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="121">
           
           
-          <code class="ruby">    @tweets_text = t.get_tweets_text()</code>
+          <code class="ruby">        redirect &#39;/client/panel&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="122">
           
           
-          <code class="ruby">    # validate user name</code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="123">
           
           
-          <code class="ruby">    (0...@usernames.length).each do |i|</code>
+          <code class="ruby">        erb :&quot;client/settings&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="124">
           
           
-          <code class="ruby">        if(check_user_exists(@db,@usernames[i])!= true)</code>
+          <code class="ruby">    end </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="125">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
-          <code class="ruby">            puts &quot;Foreign user has been found&quot;</code>
+          <code class="ruby">end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="126">
           
           
-          <code class="ruby">            @usernames.delete_at(i)</code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="127">
           
           
-          <code class="ruby">            @tweets_text.delete_at(i)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">get &#39;/admin/index&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="129">
@@ -884,205 +1156,367 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="missed" data-hits="0" data-linenumber="130">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    @twitter.find_tweets(&quot;@spicyslice&quot;) #keyword as paramater</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="missed" data-hits="0" data-linenumber="131">
           
           
-          <code class="ruby"> </code>
+          <code class="ruby">    @usernames = @twitter.get_usernames()</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="132">
           
           
-          <code class="ruby">    erb :&quot;admin/index&quot;</code>
+          <code class="ruby">    @tweets_text = @twitter.get_tweets_text()</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="133">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">      # validate user name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="134">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="135">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="135">
           
-          <code class="ruby">post &#39;/admin/index&#39; do</code>
+          
+          <code class="ruby">    (0...@usernames.length).each do |i|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="136">
+        <li class="missed" data-hits="0" data-linenumber="136">
           
           
-          <code class="ruby">   </code>
+          <code class="ruby">        if(@usernames[i]!=nil)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="137">
           
           
-          <code class="ruby">    @check = params[:check]</code>
+          <code class="ruby">            if(check_user_exists(@db,@usernames[i])!= true)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="138">
           
           
-          <code class="ruby">    @function = params[:function]</code>
+          <code class="ruby">                puts &quot;Foreign user has been found&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="139">
           
           
-          <code class="ruby">    if @check == &quot;confirm&quot; &amp;&amp; @function == &quot;confirm&quot;</code>
+          <code class="ruby">                @usernames.delete_at(i)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="140">
           
           
-          <code class="ruby">        puts &quot;nil .................&quot;</code>
+          <code class="ruby">                @tweets_text.delete_at(i)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="141">
           
           
-          <code class="ruby">       </code>
+          <code class="ruby">                # send back a tweet to the user and ask to register first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="142">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                # in order to make an ordder</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="143">
           
           
-          <code class="ruby">#     name = params[:value].strip</code>
+          <code class="ruby">           </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="144">
           
           
-          <code class="ruby">#     puts &quot;#{name}&quot;</code>
+          <code class="ruby">            end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="145">
+        <li class="never" data-hits="" data-linenumber="145">
           
           
-          <code class="ruby">    redirect &#39;/admin/index&#39;</code>
+          <code class="ruby">        else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="146">
+        <li class="missed" data-hits="0" data-linenumber="146">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">            puts &quot;nothing found bg pl&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="147">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="148">
           
           
-          <code class="ruby">        </code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="149">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="149">
           
-          <code class="ruby">get &#39;/admin/accepted&#39; do</code>
+          
+          <code class="ruby">    </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="150">
           
           
-          <code class="ruby">    erb :&quot;admin/accepted&quot;</code>
+          <code class="ruby">    $usernames = @usernames</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="151">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="152">
+          
+          
+          <code class="ruby">    erb :&quot;admin/index&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="153">
+          
+          
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="154">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="153">
+        <li class="covered" data-hits="1" data-linenumber="155">
           <span class="hits">1</span>
           
-          <code class="ruby">get &#39;/admin/users&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="154">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    erb :&quot;admin/users&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="155">
-          
-          
-          <code class="ruby">end</code>
+          <code class="ruby">post &#39;/admin/index&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="156">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="157">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="157">
           
-          <code class="ruby">get &#39;/admin/editusers&#39; do</code>
+          
+          <code class="ruby">     @button = params[:button]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="158">
           
           
-          <code class="ruby">    erb :&quot;admin/editusers&quot;</code>
+          <code class="ruby">     @number = params[:number]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="159">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">     </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="160">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="161">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="161">
           
-          <code class="ruby">get &#39;/admin/twitter&#39; do</code>
+          
+          <code class="ruby">     if(@button == &quot;confirm&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="162">
           
           
-          <code class="ruby">    erb :&quot;admin/twitter&quot;</code>
+          <code class="ruby">         @twitter.send_confirmation_tweet($usernames[@number.to_i])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="163">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="164">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
+          
+          
+          <code class="ruby">     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="166">
+          
+          
+          <code class="ruby">   </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="167">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="168">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="169">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="170">
+          
+          
+          <code class="ruby">#     name = params[:value].strip</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby">#     puts &quot;#{name}&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="172">
+          
+          
+          <code class="ruby">    redirect &#39;/admin/index&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="173">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="174">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="175">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="176">
+          <span class="hits">1</span>
+          
+          <code class="ruby">get &#39;/admin/accepted&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="177">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    erb :&quot;admin/accepted&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="178">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="179">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="180">
+          <span class="hits">1</span>
+          
+          <code class="ruby">get &#39;/admin/users&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="181">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    erb :&quot;admin/users&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="182">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="183">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="184">
+          <span class="hits">1</span>
+          
+          <code class="ruby">get &#39;/admin/editusers&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="185">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    erb :&quot;admin/editusers&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="186">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="187">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="188">
+          <span class="hits">1</span>
+          
+          <code class="ruby">get &#39;/admin/twitter&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="189">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    erb :&quot;admin/twitter&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="190">
           
           
           <code class="ruby">end</code>
@@ -1092,14 +1526,14 @@
   </pre>
 </div>
       
-        <div class="source_table" id="66f31721ddc4e6b5477c7be6a20d7c9d5da31a38">
+        <div class="source_table" id="5d08d71949662affde8911b91cfb877092247115">
   <div class="header">
-    <h3>twitter.rb</h3>
-    <h4><span class="red">35.29 %</span> covered</h4>
+    <h3>register.rb</h3>
+    <h4><span class="red">72.73 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>11</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -1109,13 +1543,13 @@
         <li class="never" data-hits="" data-linenumber="1">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># Register</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="2">
           
-          <code class="ruby">require  &#39;twitter&#39;</code>
+          
+          <code class="ruby">#</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -1127,247 +1561,457 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">class TwitterInteract</code>
+          <code class="ruby">def register_user (db, username, name, surname, email, password, contact_number,storelocation, address)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">     </code>
+          <code class="ruby">    # perform some sort of validation</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">   </code>
+          <code class="ruby">    username_ok = !username.nil? &amp;&amp; username !=&quot;&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">#     attr_reader :client</code>
+          <code class="ruby">    count = db.get_first_value(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">    # constructor of the class</code>
+          <code class="ruby">        &#39;SELECT COUNT(*) FROM personal_details WHERE email = ?&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">    def initialize()</code>
+          
+          <code class="ruby">        [email])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">        config = {</code>
+          <code class="ruby">    unique = (count == 0)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">            :consumer_key =&gt;  &#39;kotU6FQ2NGg2qresRSTqdbFwV&#39; ,</code>
+          <code class="ruby">    all_ok = username_ok &amp;&amp; unique</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">            :consumer_secret =&gt;  &#39;WGr1rGeHiJt7GEA8zQGEeYHy3k7rBKi1Qd6MTUGDuggygMy1nT&#39; ,</code>
+          <code class="ruby">    user_level = 2</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">            :access_token =&gt;  &#39;790958439694475264-DBBVNGq4AhkOpAtrKNjNjrzhfFenK99&#39; ,</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">            :access_token_secret =&gt;  &#39;Do5QRy5bVsMYk9Q4BP7ImxTbIc3KCFbTgHLKcirczpcy6&#39; </code>
+          <code class="ruby">    # add data to the database</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="3" data-linenumber="15">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">        }</code>
+          <code class="ruby">    if all_ok</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">        @client = Twitter::REST::Client.new(config)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">        @usernames = Array.new</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">        @tweets_text = Array.new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">    # For the moment get_tweets method returns only the username and text of the tweet</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">    # To add more information</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def find_tweets(keywords)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
-          
-          <code class="ruby">        tweets = @client.search(&quot;#{keywords}&quot;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="25">
-          
-          
-          <code class="ruby">        most_recent = tweets.take(5)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="27">
-          
-          
-          <code class="ruby">        most_recent.each do |tweet|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
-          
-          <code class="ruby">            @usernames.push(tweet.user.screen_name)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="29">
-          
-          
-          <code class="ruby">            @tweets_text.push(tweet.text)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">#             puts &quot;Tweet #{tweet.id}: #{tweet.text}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">#             puts &quot;User is: #{tweet.user.screen_name}&quot; # the user&#39;s screen name</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby"> </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">#             puts &quot;User is: #{tweet.user.name}&quot; # the full name provided by user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby">#             user = client.user(@username)</code>
+          <code class="ruby">        db.execute(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">#             puts &quot;Location: #{user.location}&quot;           </code>
+          <code class="ruby">            &#39;INSERT INTO personal_details VALUES (?, ?, ?, ?, ?, ?, ?)&#39;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">            [username, name, surname, email , contact_number,storelocation, address])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">        </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">      </code>
+          <code class="ruby">         db.execute(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">            &#39;INSERT INTO log_in VALUES (?, ?, ?, ?)&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">            [username,  password, user_level, 0])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">        return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="26">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        return false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">       </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="66f31721ddc4e6b5477c7be6a20d7c9d5da31a38">
+  <div class="header">
+    <h3>twitter.rb</h3>
+    <h4><span class="red">54.55 %</span> covered</h4>
+    <div>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># Have to add more methods</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"># Twitter API</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require  &#39;twitter&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class TwitterInteract</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def title</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
+          <code class="ruby">        &quot;Tweet to order&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">     </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">   </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">#     attr_reader :client</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    # constructor of the class</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize()</code>
+        </li>
+      
+        <li class="covered" data-hits="28" data-linenumber="15">
+          <span class="hits">28</span>
+          
+          <code class="ruby">        config = {</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">            :consumer_key =&gt;  &#39;kotU6FQ2NGg2qresRSTqdbFwV&#39; ,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">            :consumer_secret =&gt;  &#39;WGr1rGeHiJt7GEA8zQGEeYHy3k7rBKi1Qd6MTUGDuggygMy1nT&#39; ,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">            :access_token =&gt;  &#39;790958439694475264-DBBVNGq4AhkOpAtrKNjNjrzhfFenK99&#39; ,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">            :access_token_secret =&gt;  &#39;Do5QRy5bVsMYk9Q4BP7ImxTbIc3KCFbTgHLKcirczpcy6&#39; </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">        }</code>
+        </li>
+      
+        <li class="covered" data-hits="28" data-linenumber="21">
+          <span class="hits">28</span>
+          
+          <code class="ruby">        @client = Twitter::REST::Client.new(config)</code>
+        </li>
+      
+        <li class="covered" data-hits="28" data-linenumber="22">
+          <span class="hits">28</span>
+          
+          <code class="ruby">        @usernames = Array.new</code>
+        </li>
+      
+        <li class="covered" data-hits="28" data-linenumber="23">
+          <span class="hits">28</span>
+          
+          <code class="ruby">        @tweets_text = Array.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">    # For the moment get_tweets method returns only the username and text of the tweet</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    # To add more information</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def find_tweets(keywords)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">         </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
+          
+          <code class="ruby">        tweets = @client.search(&quot;#{keywords}&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="31">
+          
+          
+          <code class="ruby">        most_recent = tweets.take(5)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
+          
+          <code class="ruby">        most_recent.each do |tweet|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
+          
+          <code class="ruby">            @usernames.push(tweet.user.screen_name)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
+          
+          <code class="ruby">            @tweets_text.push(tweet.text)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">            </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
+          
+          <code class="ruby">            puts &quot;User is: #{tweet.user.screen_name}&quot; # the user&#39;s screen name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">#             puts &quot;User is: #{tweet.user.name}&quot; # the full name provided by user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">#             user = client.user(@username)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="43">
           
-          <code class="ruby">    def get_usernames() </code>
+          
+          <code class="ruby">#             puts &quot;Location: #{user.location}&quot;           </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">        return @usernames</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
@@ -1379,43 +2023,43 @@
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">    def get_tweets_text()</code>
+          <code class="ruby">    def send_confirmation_tweet (username)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">        return @tweets_text</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        @client.update(&quot;@#{username} Please confirm your order&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
@@ -1424,88 +2068,88 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">    def get_usernames() </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">   </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        return @usernames</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby"># tweets = client.favorites(&#39;onedirection&#39;) </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby"># most_recent = tweets.take(3)</code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># most_recent.each do |tweet|</code>
+          <code class="ruby">    def get_tweets_text()</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby"># puts &quot;Tweet #{tweet.id}: #{tweet.text}&quot;</code>
+          <code class="ruby">        return @tweets_text</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby"># puts &quot;Number of retweets: #{tweet.retweet_count}&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby"># puts &quot;Number of likes: #{tweet.favorite_count}&quot;</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby"># reply_to = tweet.in_reply_to_screen_name</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby"># puts &quot;This was a reply to: #{reply_to}&quot; if !reply_to.nil?</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby"># puts &quot;\n&quot;</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby"># end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
@@ -1523,61 +2167,61 @@
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">#, :geocode =&gt; &quot;53.395037,-1.473868,1000mi&quot;</code>
+          <code class="ruby"># tweets = client.favorites(&#39;onedirection&#39;) </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">#&quot;#{term}&quot;, :result_type =&gt; &quot;recent&quot;, :geocode =&gt; &quot;#{lat},#{long},#{radius}mi&quot;)</code>
+          <code class="ruby"># most_recent = tweets.take(3)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># most_recent.each do |tweet|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># puts &quot;Tweet #{tweet.id}: #{tweet.text}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby"># most_recent.each do |tweet|</code>
+          <code class="ruby"># puts &quot;Number of retweets: #{tweet.retweet_count}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby">#     @username = tweet.user.screen_name</code>
+          <code class="ruby"># puts &quot;Number of likes: #{tweet.favorite_count}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">#     puts &quot;Tweet #{tweet.id}: #{tweet.text}&quot;</code>
+          <code class="ruby"># reply_to = tweet.in_reply_to_screen_name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">#     puts &quot;User is: #{tweet.user.screen_name}&quot; # the user&#39;s screen name</code>
+          <code class="ruby"># puts &quot;This was a reply to: #{reply_to}&quot; if !reply_to.nil?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby"> </code>
+          <code class="ruby"># puts &quot;\n&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">#     puts &quot;User is: #{tweet.user.name}&quot; # the full name provided by user</code>
+          <code class="ruby"># end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
@@ -1589,112 +2233,184 @@
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby"># user = client.user(@username)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby"># # puts &quot;Screen name: #{user.screen_name}&quot;</code>
+          <code class="ruby">#, :geocode =&gt; &quot;53.395037,-1.473868,1000mi&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby"># # puts &quot;Name: #{user.name}&quot;</code>
+          <code class="ruby">#&quot;#{term}&quot;, :result_type =&gt; &quot;recent&quot;, :geocode =&gt; &quot;#{lat},#{long},#{radius}mi&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby"># # puts &quot;Description: #{user.description}&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby"># puts &quot;Location: #{user.location}&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby"># # puts &quot;Following: #{user.friends_count}&quot;</code>
+          <code class="ruby"># most_recent.each do |tweet|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"># # puts &quot;Followers: #{user.followers_count}&quot;</code>
+          <code class="ruby">#     @username = tweet.user.screen_name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby"># # puts &quot;Web site: #{user.website}&quot;</code>
+          <code class="ruby">#     puts &quot;Tweet #{tweet.id}: #{tweet.text}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#     puts &quot;User is: #{tweet.user.screen_name}&quot; # the user&#39;s screen name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"> </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby"># # reply_to = tweet.in_reply_to_screen_name</code>
+          <code class="ruby">#     puts &quot;User is: #{tweet.user.name}&quot; # the full name provided by user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby"># # puts &quot;This was a reply to: #{reply_to}&quot; if !reply_to.nil?</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># user = client.user(@username)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby"># # puts &quot;Number of retweets: #{tweet.retweet_count}&quot;</code>
+          <code class="ruby"># # puts &quot;Screen name: #{user.screen_name}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby"># # puts &quot;Number of likes: #{tweet.favorite_count}&quot;</code>
+          <code class="ruby"># # puts &quot;Name: #{user.name}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby"># # reply_to = tweet.in_reply_to_screen_name</code>
+          <code class="ruby"># # puts &quot;Description: #{user.description}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
           
           
-          <code class="ruby"># # puts &quot;This was a reply to: #{reply_to}&quot; if !reply_to.nil?</code>
+          <code class="ruby"># puts &quot;Location: #{user.location}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
           
           
-          <code class="ruby"># # puts &quot;\n&quot;</code>
+          <code class="ruby"># # puts &quot;Following: #{user.friends_count}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby"># # puts &quot;Followers: #{user.followers_count}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby"># # puts &quot;Web site: #{user.website}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby"># # reply_to = tweet.in_reply_to_screen_name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"># # puts &quot;This was a reply to: #{reply_to}&quot; if !reply_to.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
+          <code class="ruby"># # puts &quot;Number of retweets: #{tweet.retweet_count}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby"># # puts &quot;Number of likes: #{tweet.favorite_count}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby"># # reply_to = tweet.in_reply_to_screen_name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby"># # puts &quot;This was a reply to: #{reply_to}&quot; if !reply_to.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby"># # puts &quot;\n&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
           
           
           <code class="ruby"># end</code>
