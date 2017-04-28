@@ -18,3 +18,6 @@ source "https://rubygems.org"
     gem 'rspec'
     gem 'simplecov'
     gem 'minitest'
+
+#Gem for 5 mile radius
+    gem 'geokit-rails'

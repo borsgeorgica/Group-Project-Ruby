@@ -55,7 +55,8 @@ post '/register' do
     @address = params[:address].strip
     
     if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@storelocation,@address))
-        redirect '/client/panel'
+        @registersuccess = true
+        erb :login
     else
         @error = true
         erb :register

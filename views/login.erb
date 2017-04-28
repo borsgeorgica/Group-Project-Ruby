@@ -50,6 +50,9 @@
                                         <% if @error %>
                                         <div class="login-error"> <p> You have entered an incorrect username/password. Please try again</p> </div>
                                         <% end %>
+                                        <% if @registersuccess %>
+                                        <div class="register-success"> <p> You have registered successfully, kindly login here.</p> </div>
+                                        <% end %>
                                         <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Twitter Username" required></div>
                                     </div>
                                     <div class="col-md-12">
