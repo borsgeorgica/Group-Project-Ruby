@@ -5,7 +5,7 @@ require  'twitter'
 class TwitterInteract
     
     def title
-        "Tweet to order"
+        'Tweet to order'
     end
      
    
