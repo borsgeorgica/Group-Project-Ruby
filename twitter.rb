@@ -5,11 +5,11 @@ require  'twitter'
 class TwitterInteract
     
     def title
-        "Tweet to order"
+        'Tweet to order'
     end
      
    
-#     attr_reader :client
+    # attr_reader :client
     # constructor of the class
     def initialize()
         config = {
@@ -21,6 +21,7 @@ class TwitterInteract
         @client = Twitter::REST::Client.new(config)
         @usernames = Array.new
         @tweets_text = Array.new
+        @tweets_dates = Array.new
         
     end
     # For the moment get_tweets method returns only the username and text of the tweet
@@ -33,21 +34,19 @@ class TwitterInteract
         most_recent.each do |tweet|
             @usernames.push(tweet.user.screen_name)
             @tweets_text.push(tweet.text)
- 
+            @tweets_dates.push(tweet.created_at)
             
-            puts "User is: #{tweet.user.screen_name}" # the user's screen name
- 
-#             puts "User is: #{tweet.user.name}" # the full name provided by user
-
-#             user = client.user(@username)
-#             puts "Location: #{user.location}"           
         end
         
       
     end
     
-    def send_confirmation_tweet (username)
+    def send_confirmation_tweet(username)
         @client.update("@#{username} Please confirm your order")
+    end
+    
+    def send_registration_tweet (username)
+        @client.update("@#{username} Please register first before order")    
     end
     
     
@@ -61,6 +60,16 @@ class TwitterInteract
         return @tweets_text
     end
     
+<<<<<<< HEAD
+    # attr_accessor :client
+    # attr_accessor :usernames
+    # attr_accessor :tweets_text
+=======
+    def get_tweets_dates()
+        return @tweets_dates
+    end
+    
+>>>>>>> 7fa09a64f1e8fd9ac3a6c075c760670dcc126bde
 
     
 end

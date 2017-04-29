@@ -1052,6 +1052,10 @@ footer {
 		background-color: #FE6B6D;
 }
 
+.register-success{
+    border-left: 6px solid red;
+    background-color: #5FF252;
+}
 
 /**
 * ===============================
