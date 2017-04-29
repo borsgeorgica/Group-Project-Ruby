@@ -5,9 +5,11 @@ require_relative 'twitter.rb'
 require_relative 'validate.rb'
 
 require 'sqlite3'
+require 'date'
 
 require_relative 'login.rb'
 require_relative 'register.rb'
+require_relative 'orders.rb'
 
 include ERB::Util
 
@@ -19,10 +21,17 @@ set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
 
 before do
+    
     @db = SQLite3::Database.new './database/database_final.sqlite'
     @twitter = TwitterInteract.new()
     $current_username
     $usernames
+    $last_tweet_date
+    
+    ### read from the file
+    File.open("last_order.txt").each do |line|
+        $last_tweet_date = DateTime.parse(line.to_s)
+    end
         
 end
 
@@ -131,6 +140,8 @@ get '/admin/index' do
     @twitter.find_tweets("@spicyslice") #keyword as paramater
     @usernames = @twitter.get_usernames()
     @tweets_text = @twitter.get_tweets_text()
+    @tweets_dates = @twitter.get_tweets_dates()
+    @newest_order = DateTime.parse(@tweets_dates[0].to_s)
       # validate user name
     
     (0...@usernames.length).each do |i|
@@ -140,26 +151,43 @@ get '/admin/index' do
  
                 @usernames.delete_at(i)
                 @tweets_text.delete_at(i)
+                @tweets_dates.delete_at(i)
+               
+                @twitter.send_registration_tweet(@usernames[i])
                 # send back a tweet to the user and ask to register first
                 # in order to make an ordder
            
             else
-                if @tweets_text[i].include? "#confirm"
-                    puts "String includes 'cde'"
-                else
-                    puts "nu contine"
+                if @tweets_text[i].include? "#order"
+                    ################
+                    
+                    if $last_tweet_date == nil
+                        $last_tweet_date = DateTime.parse(@tweets_dates[i].to_s)
+                        save_to_file()
+                        add_order(@db, @usernames[i], @tweets_text[i],@tweets_dates[i].to_s)
+                    else
+                        @current_date = DateTime.parse(@tweets_dates[i].to_s)
+                        if @current_date > $last_tweet_date
+                            add_order(@db, @usernames[i], @tweets_text[i],@tweets_dates[i].to_s)
+                            if @current_date > @newest_order
+                                @newest_order = @current_date
+                            end
+                        end
+                    end
+                    
                 end
-            end
-        else
-
-
-            # send back a tweet to the user and ask to register first
-            # in order to make an order
-            # This will be completed in second iteration     
-
+                if @tweets_text[i].include? "#confirm"
+                    update_order_confirm(@db, @usernames[i], @tweets_dates[i].to_s)
+                    # update the order status in the database
+                    # with "confirmed
+                    puts "String includes 'cde'"              
+                end
+            end    
         end
     end
-    
+    $last_tweet_date = @newest_order
+    save_to_file()
+   
     $usernames = @usernames
   
     erb :"admin/index"
@@ -198,4 +226,11 @@ end
 
 get '/admin/twitter' do
     erb :"admin/twitter"
+end
+
+def save_to_file 
+#     File.open("last_order.txt") do |line|
+#         line.puts $last_tweet_date.to_s
+#     end
+     File.write('last_order.txt', $last_tweet_date)
 end

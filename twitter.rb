@@ -21,6 +21,7 @@ class TwitterInteract
         @client = Twitter::REST::Client.new(config)
         @usernames = Array.new
         @tweets_text = Array.new
+        @tweets_dates = Array.new
         
     end
     # For the moment get_tweets method returns only the username and text of the tweet
@@ -33,6 +34,7 @@ class TwitterInteract
         most_recent.each do |tweet|
             @usernames.push(tweet.user.screen_name)
             @tweets_text.push(tweet.text)
+            @tweets_dates.push(tweet.created_at)
             
         end
         
@@ -41,6 +43,10 @@ class TwitterInteract
     
     def send_confirmation_tweet (username)
         @client.update("@#{username} Please confirm your order")
+    end
+    
+    def send_registration_tweet (username)
+        @client.update("@#{username} Please register first before order")    
     end
     
     
@@ -52,6 +58,10 @@ class TwitterInteract
     
     def get_tweets_text()
         return @tweets_text
+    end
+    
+    def get_tweets_dates()
+        return @tweets_dates
     end
     
 
