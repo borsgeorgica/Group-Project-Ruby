@@ -54,7 +54,7 @@ def update_order_confirm(db, username, confirmation_date)
 end
 
 def update_order_accept(db, date)
-    status = "Order Confirmed"
+    status = "accepted"
     puts "got to accept order method"
     id = 1
     puts id
