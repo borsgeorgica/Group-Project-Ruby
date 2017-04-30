@@ -2,7 +2,7 @@ Feature: editusers
 
     Scenario: editusers page
     Given I am on the edituserspage
-    When I fill in "tusername" with "secret"
+    When I fill in "username" with "secret"
     When I fill in "name" with "text"
     When I fill in "surname" with "text"
     When I fill in "email" with "email"
