@@ -1,6 +1,4 @@
-class Register
-    
-    def title
+def title
         'Register'
     end
 
@@ -32,6 +30,3 @@ class Register
     
        
 end
-    
-end
-    

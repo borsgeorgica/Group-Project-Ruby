@@ -42,11 +42,17 @@ class TwitterInteract
     end
     
     def send_confirmation_tweet (username)
+        puts "confirmation tweet"
+        puts username
         @client.update("@#{username} Please confirm your order")
     end
     
     def send_registration_tweet (username)
         @client.update("@#{username} Please register first before order")    
+    end
+    
+    def send_deny_order(username)
+        @client.update("@#{username} Sorry, your order has been denied!")
     end
     
     

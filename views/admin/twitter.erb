@@ -1,3 +1,4 @@
+<% arraySize = @feedback.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,11 +70,14 @@
         		    		<th>Twitter Username</th>
         		    		<th>Twitter Message</th> 
         		  		</tr>
+                        <% for i in 0...arraySize %>
         		 		 <tr>
-        		 		 	 <td>02/02/2017</td>	
-        		   			 <td>Jill</td>
-        		   			 <td>Got the best pizzas from spicy slice! Love it</td>	   
+        		 		 	 <td><%= @feedback[i][0]%></td>
+                             <td><%= @feedback[i][1]%></td>
+                             <td><%= @feedback[i][2]%></td>
         		  		</tr>
+                        
+                        <% end %>
         		  		
         		  		<tr>
         		  			 <td>03/03/2017</td>
