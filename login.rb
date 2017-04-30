@@ -1,4 +1,9 @@
-# login
+class Login
+    
+    def title
+        'Login'
+    end
+    
 # got to add encryption
 
 def login (db, username, password)
@@ -33,6 +38,8 @@ def update_details(db, username, email, password, contact_number, post_code, add
     else
         return false
     end
+end
+    
 end
 
 

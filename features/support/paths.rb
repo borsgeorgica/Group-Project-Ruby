@@ -8,7 +8,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /the home\s?page/
+    when /the index\s?page/
       '/index'
     when /the login\s?page/
       '/login'
@@ -32,6 +32,8 @@ module NavigationHelpers
       '/admin/editusers'
     when /the twitter\s?page/
       '/admin/twitter'
+    when /the clientmenu\s?page/
+        '/client/../index'
    
 
     # Add more mappings here.

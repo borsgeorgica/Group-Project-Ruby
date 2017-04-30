@@ -1,34 +1,54 @@
 Feature: register
     
-    Scenario: Fill in register page
+    Scenario: On register page
     Given I am on the registerpage
     Then I should see "Register" within "h2"
-    When I fill in "username" with "secret"
-    When I fill in "name" with "text"
-    When I fill in "surname" with "text"
-    When I fill in "email" with "email"
-    When I fill in "password" with "secret"
-    When I fill in "number" with "tel"
-    When I fill in "postcode" with "postcode"
-    When I fill in "address" with "address"
+    
+    Scenario: Register
+    Given I am on the registerpage
+    When I fill in "username" with "zilongtian"
+    When I fill in "name" with "zilong"
+    When I fill in "surname" with "tian"
+    When I fill in "email" with "ztian10@sheffield.ac.uk"
+    When I fill in "password" with "123456"
+    When I fill in "number" with "0000055554444"
+    When I fill in "postcode" with "s2 5df"
+    When I fill in "address" with "80 Hoyle Street"
+    When I press "Register" within "form"
+    Then I should be on the loginpage
+    
+    Scenario: Register again with same details
+    Given I am on the registerpage
+    When I fill in "username" with "zilongtian"
+    When I fill in "name" with "zilong"
+    When I fill in "surname" with "tian"
+    When I fill in "email" with "ztian10@sheffield.ac.uk"
+    When I fill in "password" with "123456"
+    When I fill in "number" with "0000055554444"
+    When I fill in "postcode" with "s2 5df"
+    When I select "Sheffield" from "location"
+    When I fill in "address" with "80 Hoyle Street"
     When I press "Register" within "form"
     Then I should be on the registerpage
     
-    Scenario: error 
+    Scenario: Filling in the register form with nonsense information
     Given I am on the registerpage
-    When I fill in "username" with "nonsense"
-    When I fill in "name" with "nonsense"
-    When I fill in "surname" with "nonsense"
-    When I fill in "email" with "nonsense"
-    When I fill in "number" with "nonsense"
-    When I fill in "postcode" with "nonsense"
+    When I fill in "username" with "dawdwa"
+    When I fill in "name" with "dwad"
+    When I fill in "surname" with "awdwa"
+    When I fill in "email" with "awdaw"
+    When I fill in "number" with "dawdwa"
+    When I fill in "postcode" with "dawdwa"
+    When I fill in "address" with "dwadwadw"
     When I press "Register" within "form"
     Then I should see "Please check one or more values again"
+    Then I should be on the registerpage
     
     Scenario: empty page
     Given I am on the registerpage
     When I press "Register" within "form"
     Then I should see "Please check one or more values again"
+    Then I should be on the registerpage
     
     Scenario: location selection
     Given I am on the registerpage

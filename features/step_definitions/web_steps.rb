@@ -23,10 +23,14 @@ When /^(?:|I )press "([^\"]*)"(?: within "([^\"]*)")?$/ do |button, selector|
   end
 end
 
-When /^(?:|I )follow "([^\"]*)"(?: within "([^\"]*)")?$/ do |link, selector|
+When /^(?:|I )click on "([^\"]*)"(?: within "([^\"]*)")?$/ do |link, selector|
   with_scope(selector) do
     click_link(link)
   end
+end
+
+When /^(?:|I )click on image "([^\"]*)"?$/ do |img_alt|
+  find(:xpath, "//img[@alt = '#{img_alt}']/parent::a").click()
 end
 
 When /^(?:|I )fill in "([^\"]*)" with "([^\"]*)"(?: within "([^\"]*)")?$/ do |field, value, selector|
@@ -192,6 +196,10 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
   else
     assert_equal path_to(page_name), current_path
   end
+end
+
+Then /^(?:|I )should go to (.+)$/ do |page_name|
+  visit path_to(page_name)
 end
 
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|

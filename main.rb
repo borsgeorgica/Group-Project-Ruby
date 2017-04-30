@@ -5,9 +5,11 @@ require_relative 'twitter.rb'
 require_relative 'validate.rb'
 
 require 'sqlite3'
+require 'date'
 
 require_relative 'login.rb'
 require_relative 'register.rb'
+require_relative 'orders.rb'
 
 include ERB::Util
 
@@ -19,10 +21,19 @@ set :bind, '0.0.0.0' # Only needed if you're running from Codio
 
 
 before do
+    
     @db = SQLite3::Database.new './database/database_final.sqlite'
     @twitter = TwitterInteract.new()
     $current_username
-    $usernames
+    $usernames # might not need it
+    $last_tweet_date
+    $orders
+    
+    
+    ### read from the file
+    File.open("last_order.txt").each do |line|
+        $last_tweet_date = DateTime.parse(line.to_s)
+    end
         
 end
 
@@ -131,24 +142,56 @@ get '/admin/index' do
     @twitter.find_tweets("@spicyslice") #keyword as paramater
     @usernames = @twitter.get_usernames()
     @tweets_text = @twitter.get_tweets_text()
+    @tweets_dates = @twitter.get_tweets_dates()
+    @newest_order = DateTime.parse(@tweets_dates[0].to_s)
       # validate user name
     
     (0...@usernames.length).each do |i|
         if(@usernames[i]!=nil)
             if(check_user_exists(@db,@usernames[i])!= true)
                 puts "Foreign user has been found"
+ 
                 @usernames.delete_at(i)
                 @tweets_text.delete_at(i)
+                @tweets_dates.delete_at(i)
+               
+                @twitter.send_registration_tweet(@usernames[i])
                 # send back a tweet to the user and ask to register first
                 # in order to make an ordder
            
+            else
+                @current_date = DateTime.parse(@tweets_dates[i].to_s)
+                
+                if @current_date > $last_tweet_date
+                    
+                    if @tweets_text[i].include? "#order"
+                        add_order(@db, @usernames[i], @tweets_text[i],@tweets_dates[i].to_s)
+                        if @current_date > @newest_order
+                                @newest_order = @current_date
+                        end
+                    end
+                    
+                    if @tweets_text[i].include? "#confirm"
+                        update_order_confirm(@db, @usernames[i], @tweets_dates[i].to_s)
+                         # update the order status in the database
+                        # with "confirmed
+                    end       
+                    
+                    if @tweets_text[i].include? "#feedback"
+                    # add to feedback table
+                        add_feedback_tweet(@db,@usernames[i], @tweets_text[i], @tweets_dates[i].to_s)
+                    end
+                end
             end
-        else
-            puts "nothing found bg pl"
         end
     end
+    $last_tweet_date = @newest_order
+    save_to_file()
+   
+    #$usernames = @usernames
     
-    $usernames = @usernames
+    @orders = get_processing_orders(@db)
+    $orders = @orders
   
     erb :"admin/index"
 end
@@ -158,15 +201,23 @@ post '/admin/index' do
      @button = params[:button]
      @number = params[:number]
      
-     
-     if(@button == "confirm")
-         @twitter.send_confirmation_tweet($usernames[@number.to_i])
-        
-        
+     if(@button == "accept")
+         # update the order to "accepted"
+         update_order_accept(@db,$orders[@number.to_i-1].instance_variable_get(:@date))
+         
+     elsif(@button == "confirm")
+         @twitter.send_confirmation_tweet($orders[@number.to_i-1].instance_variable_get(:@username))
+     elsif(@button == "deny")
+         # send a tweet
+         @twitter.send_deny_order($orders[@number.to_i-1].instance_variable_get(:@username))
+         #$usernames[@number.to_i]
+         # delete the order
+         delete_order(@db, @number)
+         update_order_id(@db)
+     elsif(@button == "delivery")
+         #
      end
-   
-    
-  
+
 
 #     name = params[:value].strip
 #     puts "#{name}"
@@ -187,5 +238,14 @@ get '/admin/editusers' do
 end
 
 get '/admin/twitter' do
+    # load the feedback tweets from the database
+    @feedback = get_feedback_tweets(@db)
     erb :"admin/twitter"
+end
+
+def save_to_file 
+#     File.open("last_order.txt") do |line|
+#         line.puts $last_tweet_date.to_s
+#     end
+     File.write('last_order.txt', $last_tweet_date)
 end

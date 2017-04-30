@@ -1,4 +1,4 @@
-<% arraySize = @usernames.length %>
+<% arraySize = @orders.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +6,7 @@
         <title>Spicy Slice :: Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="author" content="Team23" />
-        <meta http-equiv="refresh" content="10">
+        <meta http-equiv="refresh" content="30">
 
         <!-- BOOTSTRAP CSS -->
         <link href="../style/bootstrap.min.css" rel="stylesheet">
@@ -66,7 +66,7 @@
         			<div class="twitter-orders container col-md-offset-1" style="width=100%">
         			<table>
         		 		 <tr>
-                    <th>Tweet No.</th>
+                    <th>Order No.</th>
         		    		<th>Twitter Username</th>
         		    		<th>Twitter message</th>
                             <th>Confirmation</th>
@@ -94,21 +94,22 @@
         		   			 <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269"/></form> </td>
         		  		</tr> -->
 
-                        <% for i in 1...arraySize+1 %>
+                        <% for i in 0...arraySize %>
                         <tr>
-                            <td><%= i%></td>
-                            <td><%= @usernames[i-1] %></td>
-                            <td><%= @tweets_text[i-1] %></td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "confirmation"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "confirm" /></form> </td>
-                            <td>Not Confirmed</td>
-                            <td><form method = "POST"><input class="button-twitter-order" name= "<%i%>-accept" function="accept" type="button" value="&#10003;" onclick="accept()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "accept" /></form> </td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-deny" function="deny" type="button" value="&#10006;" onclick="decline()"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "deny" /></form></td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="<%i%>-delivery" type="button" function="delivery" value="&#128269"/><input type="hidden" name="number" value= "<%=i-1%>" /><input type="hidden" name="button" value= "delivery" /></form> </td>
+                            <td><%= @orders[i].instance_variable_get(:@id)%></td>
+                            <td><%= @orders[i].instance_variable_get(:@username) %></td>
+                            <td><%= @orders[i].instance_variable_get(:@pizza) %></td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "confirmation"  check = "confirm" function= "confirm" type="submit" value="&#8634;" onclick="confirm()"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "confirm" /></form> </td>
+                            <td><%= @orders[i].instance_variable_get(:@status) %></td>
+                            <td><form method = "POST"><input class="button-twitter-order" name= "accept" check = "accept" function= "accept" type="submit" value="&#10003;" onclick="accept()"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "accept" /></form> </td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="deny" function="deny" type="submit" value="&#10006;" onclick="decline()"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "deny" /></form></td>
+        		   			<td><form method = "POST"><input class="button-twitter-order" name="delivery" type="submit" function="delivery" value="&#128269"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "delivery" /></form> </td>
                         </tr>
                         <% end %>
 
         			</table>
         		</div>
+            </div>
           </section>
 
           <br>
@@ -142,6 +143,7 @@
 
                     </table>
                 </div>
+              </div>
           </section>
 
           <%= erb :footer %>

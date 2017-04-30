@@ -1,10 +1,11 @@
-# Register
-#
+def title
+        'Register'
+    end
 
-def register_user (db, username, name, surname, email, password, contact_number,storelocation, address)
-    # perform some sort of validation
-    username_ok = !username.nil? && username !=""
-    count = db.get_first_value(
+    def register_user (db, username, name, surname, email, password, contact_number,storelocation, address)
+        # perform some sort of validation
+        username_ok = !username.nil? && username !=""
+        count = db.get_first_value(
         'SELECT COUNT(*) FROM personal_details WHERE email = ?',
         [email])
     unique = (count == 0)
@@ -29,4 +30,3 @@ def register_user (db, username, name, surname, email, password, contact_number,
     
        
 end
-    
