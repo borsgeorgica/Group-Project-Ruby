@@ -6,6 +6,7 @@ require_relative 'validate.rb'
 
 require 'sqlite3'
 require 'date'
+require 'erb'
 
 require_relative 'login.rb'
 require_relative 'register.rb'
@@ -38,7 +39,6 @@ before do
 end
 
 get '/' do
-    redirect '/login' unless session[:logged_in]
     erb :index
 
 end
@@ -248,4 +248,8 @@ def save_to_file
 #         line.puts $last_tweet_date.to_s
 #     end
      File.write('last_order.txt', $last_tweet_date)
+end
+
+not_found do
+    '[404] We are really sorry you ran into trouble, kindly go back to our main site #SpicySlice'
 end
