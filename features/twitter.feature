@@ -8,8 +8,9 @@ Feature: twitter
     
     Scenario: tweets
     Given I am on the twitterpage
-    When I fill in "tweet" with "text"
+    When I fill in "tweet" with "cucumber testing"
     When I press "Tweet it!" within "form" 
+    Then I should be on the twitterpage
     
     Scenario: clear tweet
     Given I am on the twitterpage

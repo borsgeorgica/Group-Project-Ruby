@@ -9,7 +9,7 @@ class TwitterInteract
     end
      
    
-#     attr_reader :client
+    # attr_reader :client
     # constructor of the class
     def initialize()
         config = {
@@ -41,9 +41,9 @@ class TwitterInteract
       
     end
     
-    def send_confirmation_tweet (username)
-        puts "confirmation tweet"
-        puts username
+
+    def send_confirmation_tweet(username)
+
         @client.update("@#{username} Please confirm your order")
     end
     
@@ -66,10 +66,12 @@ class TwitterInteract
         return @tweets_text
     end
     
+
     def get_tweets_dates()
         return @tweets_dates
     end
     
+
 
     
 end
