@@ -35,6 +35,11 @@ class TwitterInteract
             @usernames.push(tweet.user.screen_name)
             @tweets_text.push(tweet.text)
             @tweets_dates.push(tweet.created_at)
+            # follow that person
+            if(tweet.user.screen_name != "bors_georgica")
+                @client.follow(tweet.user.screen_name)
+            end
+            
             
         end
         
