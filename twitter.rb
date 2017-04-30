@@ -13,10 +13,10 @@ class TwitterInteract
     # constructor of the class
     def initialize()
         config = {
-            :consumer_key =>  'kotU6FQ2NGg2qresRSTqdbFwV' ,
-            :consumer_secret =>  'WGr1rGeHiJt7GEA8zQGEeYHy3k7rBKi1Qd6MTUGDuggygMy1nT' ,
-            :access_token =>  '790958439694475264-DBBVNGq4AhkOpAtrKNjNjrzhfFenK99' ,
-            :access_token_secret =>  'Do5QRy5bVsMYk9Q4BP7ImxTbIc3KCFbTgHLKcirczpcy6' 
+            :consumer_key =>  'um6NmgoepdW830G5CJ8PNlEay' ,
+            :consumer_secret =>  'Gr9mwM0J1IHzKefKDvy3BU813qvyVq2Zy8lnp4BgiRxPpovYpz' ,
+            :access_token =>  '858700735726444545-Bg02Q46IxlLAevNxdLXa2YLGoUib95X' ,
+            :access_token_secret =>  'cdQT0YatbFCHNBdfmE4pCOBhcZfQCaoJJ5iY8macLZz5n' 
         }
         @client = Twitter::REST::Client.new(config)
         @usernames = Array.new
