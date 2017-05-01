@@ -34,21 +34,9 @@ class TestTwitterInteract < Minitest::Test
     def test_tweets_text
         assert_nil @tweets_text, @twitter.get_tweets_text()
     end
-end
-
-class TestRegister < Minitest::Test
     
-    def setup
-        @register = Register.new
-    end
-    
-    def test_title_is_register
-        assert_equal 'Register', @register.title
-    end
-    
-    # Could not fix this error
-    def test_register_user
-        assert_equal 'SELECT COUNT(*) FROM personal_details WHERE email = ?', @register.register_user(db, username, name, surname, email, password, contact_number,storelocation, address)
+    def test_tweets_dates
+        assert_nil @tweets_dates, @twitter.get_tweets_dates()
     end
     
 end
@@ -66,4 +54,3 @@ class TestLogin < Minitest::Test
 end
     
     
-

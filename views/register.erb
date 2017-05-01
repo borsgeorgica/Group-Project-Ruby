@@ -53,22 +53,22 @@
                                         <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Twitter Username" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="First Name" required></div>
+                                        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="First Name" pattern="[A-Za-z]" title="Letters only" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="text" name="surname" placeholder="Surname" required></div>
+                                        <div class="form-group"><input class="form-control" type="text" name="surname" placeholder="Surname" pattern="[A-Za-z]" title="Letters only" required></div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+                                        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" maxlength="12" title="Up to 12 digits" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="tel" name="number" maxlength="16" placeholder="Contact Number" required></div>
+                                        <div class="form-group"><input class="form-control" type="tel" name="number" maxlength="16" placeholder="Contact Number" pattern="\d*" title="Numbers only" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="postcode" name="postcode" style='text-transform:uppercase' maxlength="6" placeholder="Postcode" required></div>
+                                        <div class="form-group"><input class="form-control" type="postcode" name="postcode" style='text-transform:uppercase' maxlength="6" pattern="[a-zA-Z0-9-]+" placeholder="Postcode" required></div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group>">
@@ -82,7 +82,7 @@
                                     </div>
                                     
                                     <div class="col-md-12">
-                                        <div class="form-group"><textarea class="form-control" name="address" id="address" cols="30" rows="8" placeholder="Full Address" required></textarea></div>
+                                        <div class="form-group"><textarea class="form-control" name="address" id="address" cols="30" rows="4" placeholder="Full Address" required></textarea></div>
                                     </div>
                                 </div>
 
