@@ -8,12 +8,8 @@ def title
         count = db.get_first_value(
         'SELECT COUNT(*) FROM personal_details WHERE email = ?',
         [email])
-        count2 = db.get_first_value(
-            'SELECT COUNT(*) FROM log_in WHERE username = ?',[username])
-
     unique = (count == 0)
-    unique2 = (count2 == 0)
-    all_ok = username_ok && unique && unique2
+    all_ok = username_ok && unique
     user_level = 2
     points = 0
     
