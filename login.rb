@@ -1,3 +1,4 @@
+
     def title
         'Login'
     end
@@ -39,4 +40,6 @@ def update_details(db, username, email, password, contact_number, post_code, add
 end
 
 
-    
+def get_customers(db)
+    return db.execute('SELECT * FROM personal_details')
+end

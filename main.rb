@@ -64,8 +64,9 @@ post '/register' do
     @contact_number = params[:number].strip
     @storelocation = params[:location].strip
     @address = params[:address].strip
+    @postcode = param[:postcode]
     
-    if(register_user(@db,@username,@name,@surname,@email,@password,@contact_number,@storelocation,@address))
+    if(register_user(@db,@username,@name,@surname,@email,@postcode, @password,@contact_number,@storelocation,@address))
         @registersuccess = true
         erb :login
     else
@@ -139,11 +140,12 @@ end
 
 get '/admin/index' do
     
-    @twitter.find_tweets("@spicyslice") #keyword as paramater
+    @twitter.find_tweets("@Spicy_Slice23") #keyword as paramater
     @usernames = @twitter.get_usernames()
     @tweets_text = @twitter.get_tweets_text()
     @tweets_dates = @twitter.get_tweets_dates()
     @newest_order = DateTime.parse(@tweets_dates[0].to_s)
+    
       # validate user name
     
     (0...@usernames.length).each do |i|
@@ -230,6 +232,8 @@ get '/admin/accepted' do
 end
 
 get '/admin/users' do
+    # load the details of the users
+    @customers = get_customers(@db)
     erb :"admin/users"
 end
 
