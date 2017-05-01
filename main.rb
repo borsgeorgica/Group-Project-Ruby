@@ -29,6 +29,8 @@ before do
     $usernames # might not need it
     $last_tweet_date
     $orders
+    $competition_date
+    $no_of_competitors
     
     
     ### read from the file
@@ -191,6 +193,12 @@ get '/admin/index' do
                     # add to feedback table
                         add_feedback_tweet(@db,@usernames[i], @tweets_text[i], @tweets_dates[i].to_s)
                     end
+                    if @tweets_text[i].include? "#competition"
+                    # add to competition table
+                        add_feedback_tweet(@db,@usernames[i], @tweets_text[i], @tweets_dates[i].to_s)
+                    end
+                    
+                    
                 end
             end
         end
@@ -297,7 +305,22 @@ end
 get '/admin/twitter' do
     # load the feedback tweets from the database
     @feedback = get_feedback_tweets(@db)
+    @competition_tweets = get_competition_tweets(@db)
+    $no_of_competitors = @competition_tweets.length
     erb :"admin/twitter"
+end
+
+post '/admin/twitter' do
+    
+   button = params[:comp]
+   if button == "Click to Randomly choose a winner!"
+       # choose winner
+   elsif button == "Click to clear the competition log"
+       # clear competition log
+   end
+    
+   redirect '/admin/twitter'
+
 end
 
 get '/deliver' do
