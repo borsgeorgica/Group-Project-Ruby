@@ -43,3 +43,9 @@ end
 def get_customers(db)
     return db.execute('SELECT * FROM personal_details')
 end
+
+def get_points(db, username)
+    
+    return db.execute('SELECT Points FROM personal_details WHERE TwitterUsername = ?',
+        [username])
+end

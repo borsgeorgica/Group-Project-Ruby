@@ -53,6 +53,13 @@ def update_order_confirm(db, username, confirmation_date)
 
 end
 
+def update_order(db,date,status)
+    db.execute(
+        'UPDATE orders SET Status = ? WHERE Date = ?',
+        [status, date])
+       
+end
+
 def update_order_accept(db, date)
     status = "accepted"
     puts "got to accept order method"
@@ -115,3 +122,16 @@ def get_feedback_tweets(db)
     
 end
 
+def get_accepted_orders(db)
+    status_unconfirmed = 'unconfirmed'
+    status_confirmed = 'confirmed'
+    return db.execute('SELECT Date, TwitterUsername, Pizza, Status FROM orders WHERE NOT Status = ? OR Status = ?', 
+        [status_confirmed], [status_unconfirmed])
+end
+
+def delete_accepted_orders(db)
+    status = "accepted"
+    db.execute(
+        'DELETE FROM orders WHERE Status = ?', 
+        [status])
+end

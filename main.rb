@@ -108,6 +108,7 @@ end
 get '/client/panel' do
     @user = $current_username
     redirect '/login' unless session[:logged_in]
+    @points = get_points(@db, @user)
 
     erb :"client/panel"
 end
@@ -228,9 +229,54 @@ end
 
 
 get '/admin/accepted' do
+    # display the accepted orders
+    @accepted_orders = get_accepted_orders(@db)
+    #delete_accepted_orders(@db)
+   
+   
+    for i in 0...@accepted_orders.length
+        pizza = @accepted_orders[i][2]
+        #check the size
+        if pizza.downcase.include? "large"
+            size = "Large"
+        elsif pizza.downcase.include? "medium"
+            size = "Medium"
+        elsif pizza.downcase.include? "small"
+            size = "Small"
+        end
+        
+        # check the type
+        if pizza.downcase.include? "milano"
+            type = "Milano"
+        elsif pizza.downcase.include? "ardente"
+            type = "Ardente"
+        elsif pizza.downcase.include? ""
+            type = ""    
+        elsif pizza.downcase.include? ""
+            type = ""
+        elsif pizza.downcase.include? ""
+            type = "" 
+        
+        end
+        # to be continued
+        ###
+        @accepted_orders[i].push(type)
+        @accepted_orders[i].push(size)
+        
+    end
+    
+
     erb :"admin/accepted"
 end
 
+post '/admin/accepted' do
+    status = params[:CurrentStatus]
+    date = params[:date]
+    update_order(@db, date, status)
+    
+    redirect '/admin/accepted'
+  
+end
 get '/admin/users' do
     # load the details of the users
     @customers = get_customers(@db)

@@ -1,3 +1,4 @@
+<% arraySize = @accepted_orders.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -93,7 +94,10 @@
                             	        </div>
                             	</div>
                                 <div class="form-group"><input class="btn btn-success" type="submit" value="Add Order"></div>
+                                </div>
                             </form>
+                            
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -117,12 +121,16 @@
         		    		<th>Update Status</th>  
         		    		<th>Save changes</th>
         		  		</tr>
+                        <% for i in 0...arraySize %>
         		 		 <tr>
-        		 		 	 <td>DB</td>	
-        		   			 <td>Jill</td>
-        		   			 <td>From the db now</td>
-        		   			 <td>From the db now</td>        		    		 
-        		   			 <td>From the db now</td>
+        		 		 	 <td><%= @accepted_orders[i][0]%></td>	
+        		   			 <td><%= @accepted_orders[i][1]%></td>
+        		   			 
+        		   			         		    		 
+        		   			 <td><%= @accepted_orders[i][4]%></td>
+                             <td><%= @accepted_orders[i][5]%></td>
+                             <td><%= @accepted_orders[i][3]%></td>
+                             <form method = "POST">
         		    		 <td>
         		    		 	 <select name="CurrentStatus" placeholder="Status" class="form-control dropdown">
         		    		 	 		 <option value="" disabled selected>Update Status</option>
@@ -131,29 +139,16 @@
         		    		 	   		<option value="Delivery">Out For Delivery</option>
         		    		 	 	</select>
         		    		 	 </td>
-        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10003;"/></form> </td>
+        		    		 <td><input class="button-twitter-order" type="submit" value="&#10003;"/><input type="hidden" name="date" value= "<%=@accepted_orders[i][0]%>" /></td></form>
         		    		   
         		  		</tr>
+                         <% end %>
         		  		
-        		  		<tr>
-        		  			<td>DB</td>
-        		  			 <td>Eve</td>
-        		   			 <td>From the db now</td>
-        		   			 <td>From the db now</td>
-        		   			 <td>From the db now</td>
-        		   			 <td>
-        		   			 	<select name="CurrentStatus" placeholder="Status" class="form-control dropdown">
-        		   			 		 <option value="" disabled selected>Update Status</option>
-        		   			  		 <option value="Baking">Baking</option>
-        		   			   		 <option value="QualityCheck">Quality Check</option>
-        		   			   		<option value="Delivery">Out For Delivery</option>
-        		   			 	</select>
-        		   			 </td>
-        		   			 <td><form><input class="button-twitter-order" type="button" value="&#10003;"/></form> </td>
-        		   		</tr>
+        		  		
         		  		
         			</table>
         		</div>
+            </div>
           </section> 
 		  
 		        
