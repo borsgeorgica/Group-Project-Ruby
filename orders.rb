@@ -62,9 +62,7 @@ end
 
 def update_order_accept(db, date)
     status = "accepted"
-    puts "got to accept order method"
     id = 1
-    puts id
     id = id.to_i
     db.execute(
         'UPDATE orders SET Status = ? WHERE Date = ?',

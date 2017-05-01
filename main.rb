@@ -152,7 +152,6 @@ get '/admin/index' do
     (0...@usernames.length).each do |i|
         if(@usernames[i]!=nil)
             if(check_user_exists(@db,@usernames[i])!= true)
-                puts "Foreign user has been found"
  
                 @usernames.delete_at(i)
                 @tweets_text.delete_at(i)
