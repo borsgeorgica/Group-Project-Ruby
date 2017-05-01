@@ -106,9 +106,6 @@ get '/logout' do
 end
 
 get '/client/panel' do
-    if get_no_of_orders(@db) <= 0
-        @NoOrders = true
-
     @user = $current_username
     redirect '/login' unless session[:logged_in]
     @points = get_points(@db, @user)
