@@ -1,5 +1,4 @@
 <% arraySize = @feedback.length %>
-<% comp_length = @competition_tweets.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -92,11 +91,8 @@
                 <div class="row">
                     <div class="twitter-orders container col-md-offset-1">
                     <br></br>
-                    <form method = "POST">
-                        
-                    
-                    <input class="clearComp" type="submit" name="comp" value="Click to clear the competition log">
-                        <input class="competitionwin" type="submit" name="comp" value="Click to Randomly choose a winner!"></form>
+                    <input class="clearComp" type="submit" name="clearComp" value="Click to clear the competition log">
+                    <input class="competitionwin" type="submit" name="competition" value="Click to Randomly choose a winner!">
                     <br></br>
 
                     <table>
@@ -107,15 +103,19 @@
                             <th>Twitter Message</th>
 
                         </tr>
-                         <% for i in 0...comp_length %>
                          <tr>
-                             <td><%= i+1 %></td>
-                             <td><%= @competition_tweets[i][0]%></td>    
-                             <td><%= @competition_tweets[i][1]%></td>
-                             <td><%= @competition_tweets[i][2]%></td>    
+                             <td>1</td>
+                             <td>02/02/2017</td>    
+                             <td>Jill</td>
+                             <td>I wish i win the free pizza's @WinSpicySlice</td>    
                         </tr>
-                        <% end %>
                         
+                        <tr>
+                             <td>2</td>
+                             <td>03/03/2017</td>
+                             <td>Eve</td>
+                             <td>This will be delicious #WinSpicySlice</td>
+                        </tr>
                         
                     </table>
                 </div>
