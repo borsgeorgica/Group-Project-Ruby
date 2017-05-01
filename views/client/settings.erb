@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Spicy Slice :: Settingss</title>
+        <title>Spicy Slice :: Settings</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="author" content="Team23" />
 
@@ -40,37 +40,44 @@
                 <div class="text-center">
                     <h2 class="space-40 solidBlock">Account Settings</h2>
                 </div>
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="form-wrapper space-60">
-                            <div id="response"></div>
-                            <form method="POST" id="contact-form">
-                                <div class="row">
+                        <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Twitter Username" disabled=""></div>
+                                        <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Twitter Username" maxlength="16" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="First Name" disabled=""></div>
+                                        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="First Name" pattern="[A-Za-z]" title="Letters only" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="text" name="surname" placeholder="Surname" disabled=""></div>
+                                        <div class="form-group"><input class="form-control" type="text" name="surname" placeholder="Surname" pattern="[A-Za-z]" title="Letters only" required></div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="text" name="password" placeholder="Password" required></div>
+                                        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" maxlength="12" title="Up to 12 digits" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="tel" name="tel" maxlength="16" placeholder="Contact Number" required></div>
+                                        <div class="form-group"><input class="form-control" type="tel" name="number" maxlength="16" placeholder="Contact Number" pattern="\d*" title="Numbers only" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><input class="form-control" type="postcode" style='text-transform:uppercase' name="postcode" maxlength="6" placeholder="Postcode" required></div>
+                                        <div class="form-group"><input class="form-control" type="postcode" name="postcode" style='text-transform:uppercase' maxlength="6" pattern="[a-zA-Z0-9-]+" placeholder="Postcode" required></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group"><textarea class="form-control" name="address" id="address" cols="30" rows="8" placeholder="Full Address" required></textarea></div>
+                                        <div class="form-group>">
+                                        <select class="form-control dropdown" type="location" name="location"  required>
+                                        <option value="" disabled selected>Location</option>
+                                            <option value="London">London</option>
+                                            <option value="Sheffield">Sheffield</option>
+                                        </select>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="form-group"><textarea class="form-control" name="address" id="address" cols="30" rows="4" placeholder="Full Address" required></textarea></div>
                                     </div>
                                 </div>
+
 
                                 <div class="form-group"><input class="btn btn-success" type="submit" value="Update settings"></div>
                             </form>

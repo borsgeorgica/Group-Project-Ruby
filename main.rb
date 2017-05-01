@@ -253,3 +253,7 @@ end
 not_found do
     '[404] We are really sorry you ran into trouble, kindly go back to our main site #SpicySlice'
 end
+
+error do 
+    'You clearly are lost or we are down, find updates on our twitter @Spicy_Slice'
+end
