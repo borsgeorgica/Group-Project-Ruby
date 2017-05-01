@@ -100,17 +100,10 @@
               <br></br>
                   <p>
                     Ordered via twitter? Great! You will find details on your order below such as if it has been accepted by us or rejected due to location.</p>
-                   <p>
-                    Don't forget to order correctly!</p>
+                   <p>If you do not see any orders then you have none!</p>
               </div>
               <br></br>
-
-              <!-- If no order then use this div -->
-              <% if @user_orders = true %>
-              <div class="text-center container menu-desc space-10">
-                <h3> <span> You do not have any orders yet! Go on to twitter and order! </span> </h3>
-              </div>
-              <% end %>
+            
 
               <!-- If pizza orders then use this to display their order -->
               <% for i in 0...arraySize %>

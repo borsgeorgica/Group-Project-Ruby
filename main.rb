@@ -117,7 +117,6 @@ get '/client/panel' do
         @user_orders[i].push(pizza_type)
         @user_orders[i].push(pizza_size)
     end
-
     erb :"client/panel"
 end
 
