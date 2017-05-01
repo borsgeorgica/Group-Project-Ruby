@@ -135,3 +135,41 @@ def delete_accepted_orders(db)
         'DELETE FROM orders WHERE Status = ?', 
         [status])
 end
+
+def get_orders_by_user(db, username)
+    orders = db.execute('SELECT * FROM orders WHERE TwitterUsername = ?',
+        [username])  
+    puts "order is:"
+    puts orders
+    puts username
+    return  orders
+end
+
+def get_pizza_type(pizza)
+    if pizza.downcase.include? "milano"
+            type = "Milano"
+    elsif pizza.downcase.include? "ardente"
+            type = "Ardente"
+    elsif pizza.downcase.include? ""
+            type = ""    
+    elsif pizza.downcase.include? ""
+            type = ""
+    elsif pizza.downcase.include? ""
+            type = "" 
+        
+    end
+    
+    return type  
+end
+
+def get_pizza_size(pizza)
+    if pizza.downcase.include? "large"
+            size = "Large"
+    elsif pizza.downcase.include? "medium"
+            size = "Medium"
+    elsif pizza.downcase.include? "small"
+            size = "Small"
+    end
+    
+    return size   
+end

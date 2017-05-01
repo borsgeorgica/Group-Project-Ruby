@@ -1,3 +1,4 @@
+<% arraySize = @user_orders.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -104,23 +105,25 @@
               </div>
 
               <!-- If pizza orders then use this to display their order -->
+              <% for i in 0...arraySize %>
               <div class="menu-item space-10">
                  	<div class="menu-img" style="background-image: url('../img/p1.png');">
                  	</div>
                      	<div class="menu-desc">
                      	<div>
-                         	<h3>Milano</h3>
-                          	<p>Ventricina Salami and Prosciutto Ham.</p>
-                          	<p>Date: 12/12/12
-                          	<p>Your selected size : Medium</p>
+                         	<h3><%= @user_orders[i][5]%></h3>
+                          	
+                          	<p>Date: <%= @user_orders[i][4]%>
+                          	<p>Your selected size :<%= @user_orders[i][6]%></p>
                       	</div>
                     </div>
                     <div class="menu-price">
-                      <div class="price"> Approved </div>
-                      <div class="price"> Out for delivery </div>
+                      <div class="price"><%= @user_orders[i][3]%></div>
+                      
 
                      </div>
               </div>
+               <% end %>
           </section>
 
 		<section id="contact">

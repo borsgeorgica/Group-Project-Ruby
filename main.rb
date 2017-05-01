@@ -109,6 +109,14 @@ get '/client/panel' do
     @user = $current_username
     redirect '/login' unless session[:logged_in]
     @points = get_points(@db, @user)
+    # get orders created by this username
+    @user_orders = get_orders_by_user(@db, @user)
+    for i in 0...@user_orders.length
+        pizza_type = get_pizza_type(@user_orders[i][2])
+        pizza_size = get_pizza_size(@user_orders[i][2])
+        @user_orders[i].push(pizza_type)
+        @user_orders[i].push(pizza_size)
+    end
 
     erb :"client/panel"
 end
