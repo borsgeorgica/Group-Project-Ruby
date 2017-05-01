@@ -13,10 +13,10 @@ class TwitterInteract
     # constructor of the class
     def initialize()
         config = {
-            :consumer_key =>  'kotU6FQ2NGg2qresRSTqdbFwV' ,
-            :consumer_secret =>  'WGr1rGeHiJt7GEA8zQGEeYHy3k7rBKi1Qd6MTUGDuggygMy1nT' ,
-            :access_token =>  '790958439694475264-DBBVNGq4AhkOpAtrKNjNjrzhfFenK99' ,
-            :access_token_secret =>  'Do5QRy5bVsMYk9Q4BP7ImxTbIc3KCFbTgHLKcirczpcy6' 
+            :consumer_key =>  'um6NmgoepdW830G5CJ8PNlEay' ,
+            :consumer_secret =>  'Gr9mwM0J1IHzKefKDvy3BU813qvyVq2Zy8lnp4BgiRxPpovYpz' ,
+            :access_token =>  '858700735726444545-Bg02Q46IxlLAevNxdLXa2YLGoUib95X' ,
+            :access_token_secret =>  'cdQT0YatbFCHNBdfmE4pCOBhcZfQCaoJJ5iY8macLZz5n' 
         }
         @client = Twitter::REST::Client.new(config)
         @usernames = Array.new
@@ -36,14 +36,9 @@ class TwitterInteract
             @tweets_text.push(tweet.text)
             @tweets_dates.push(tweet.created_at)
             # follow that person
-            if(tweet.user.screen_name != "bors_georgica")
-                @client.follow(tweet.user.screen_name)
-            end
-            
-            
-        end
-        
-      
+            #@client.follow(tweet.user.screen_name)
+  
+        end 
     end
     
 
@@ -75,53 +70,5 @@ class TwitterInteract
     def get_tweets_dates()
         return @tweets_dates
     end
-    
-
-
-    
+       
 end
-
-
-
-# tweets = client.favorites('onedirection') 
-# most_recent = tweets.take(3)
-# most_recent.each do |tweet|
-# puts "Tweet #{tweet.id}: #{tweet.text}"
-# puts "Number of retweets: #{tweet.retweet_count}"
-# puts "Number of likes: #{tweet.favorite_count}"
-# reply_to = tweet.in_reply_to_screen_name
-# puts "This was a reply to: #{reply_to}" if !reply_to.nil?
-# puts "\n"
-# end
-
-
-#, :geocode => "53.395037,-1.473868,1000mi"
-#"#{term}", :result_type => "recent", :geocode => "#{lat},#{long},#{radius}mi")
-
-
-# most_recent.each do |tweet|
-#     @username = tweet.user.screen_name
-#     puts "Tweet #{tweet.id}: #{tweet.text}"
-#     puts "User is: #{tweet.user.screen_name}" # the user's screen name
- 
-#     puts "User is: #{tweet.user.name}" # the full name provided by user
-
-# user = client.user(@username)
-# # puts "Screen name: #{user.screen_name}"
-# # puts "Name: #{user.name}"
-# # puts "Description: #{user.description}"
-# puts "Location: #{user.location}"
-# # puts "Following: #{user.friends_count}"
-# # puts "Followers: #{user.followers_count}"
-# # puts "Web site: #{user.website}"
-
-    
-# # reply_to = tweet.in_reply_to_screen_name
-# # puts "This was a reply to: #{reply_to}" if !reply_to.nil?
-
-# # puts "Number of retweets: #{tweet.retweet_count}"
-# # puts "Number of likes: #{tweet.favorite_count}"
-# # reply_to = tweet.in_reply_to_screen_name
-# # puts "This was a reply to: #{reply_to}" if !reply_to.nil?
-# # puts "\n"
-# end

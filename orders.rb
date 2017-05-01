@@ -109,7 +109,7 @@ def get_feedback_tweets(db)
     feedback = Array.new
     
     feedback = db.execute('SELECT * FROM feedback')
-    puts "got to the feedback method"
+    
     return feedback
     
     

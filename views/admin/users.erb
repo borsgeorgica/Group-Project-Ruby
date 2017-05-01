@@ -1,3 +1,4 @@
+<% arraySize = @customers.length %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,9 +48,9 @@
         <!-- Table for showing all users + search button -->
         <section id="Tweet-order">
         			<div class="twitter-orders container text-center col-md-offset-1" style="width=100%">
-        			<br></br>
+        			<br>
         			<input class="searchadmin" type="text" name="search" placeholder="&#128269   Search..">
-        			<br></br>
+        			<br>
         			<table>
         		 		 <tr>
         		    		<th>User No.</th>
@@ -57,35 +58,33 @@
         		    		<th>First Name</th>
         		    		<th>Surname</th>
         		    		<th>Email</th>
-                    <th>Postcode</th>
+                            <th>Postcode</th>
         		    		<th>Contact Number</th>
-                    <th>Points</th>
+                            <th>Points</th>
         		    		<th>Edit User</th>
         		  		</tr>
-        		 		 <tr>
-        		 		 	 <td>1</td>
-        		   			 <td>JillABC</td>
-        		   			 <td>Jill </td>
-        		   			 <td>Jill</td>
-        		    		 <td>jill@gmail.com</td>
-                     <td>S7 2AR</td>
-        		    		 <td>+4473293281131</form></td>
-                      <td>0</td>
-        		    		 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td>
+        		 		
+                        <% for i in 0...arraySize %>
+                        <tr>
+                             <td><%= i+1 %></td>
+        		 		 	 <td><%= @customers[i][0]%></td>
+                             <td><%= @customers[i][1]%></td>
+                             <td><%= @customers[i][2]%></td>
+                             <td><%= @customers[i][3]%></td>
+                             <td><%= @customers[i][4]%></td>
+                             <td><%= @customers[i][5]%></td>   
+                             
+                             <td><%= @customers[i][8]%></td>
+                            
+                             <td><form><input class="button-twitter-order" type="button" value="&#10145;"></form></td>
+                            
         		  		</tr>
-        		  		<tr>
-        		  			 <td>2</td>
-        		  			 <td>Eve123</td>
-        		  			 <td>Eve</td>
-        		  			 <td>Jackson</td>
-        		  			 <td>Eve@gmail.com</td>
-                     <td>S7 2AR</td>
-        		  			 <td>+4473293281131</form></td>
-                      <td>0</td>
-        		  			 <td><form><input class="button-twitter-order" type="button" value="&#10145;"/></form> </td>
-        		  			</tr>
+        		  		 <% end %>
 
-        			</table>
+                        </table>
+            </div>
+    
+ 
           </section>
 
 
