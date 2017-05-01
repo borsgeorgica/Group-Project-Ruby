@@ -73,7 +73,6 @@
                             <th>Confirmation Status</th>
         		    		<th>Accept Order</th>
         		    		<th>Decline Order</th>
-        		    		<th>Out of delivery range</th>
         		  		</tr>
         		 		<!--  <tr>
                     <td>1</td>
@@ -103,47 +102,12 @@
                             <td><%= @orders[i].instance_variable_get(:@status) %></td>
                             <td><form method = "POST"><input class="button-twitter-order" name= "accept" check = "accept" function= "accept" type="submit" value="&#10003;" onclick="accept()"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "accept" /></form> </td>
         		   			<td><form method = "POST"><input class="button-twitter-order" name="deny" function="deny" type="submit" value="&#10006;" onclick="decline()"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "deny" /></form></td>
-        		   			<td><form method = "POST"><input class="button-twitter-order" name="delivery" type="submit" function="delivery" value="&#128269"/><input type="hidden" name="number" value= "<%=i+1%>" /><input type="hidden" name="button" value= "delivery" /></form> </td>
                         </tr>
                         <% end %>
 
         			</table>
         		</div>
             </div>
-          </section>
-
-          <br>
-
-          <section id="Tweet-order">
-                <div class="line">
-                    <h2>Confirmed Tweet Orders</h2>
-                </div>
-                <div class="row">
-                    <div class="twitter-orders container col-md-offset-1" style="width=100%">
-                    <table>
-                         <tr>
-                    <th>Tweet No.</th>
-                            <th>Twitter Username</th>
-                            <th>Twitter message</th>
-                        </tr>
-                 <tr>
-                             <td>1</td>
-                             <td>Jill</td>
-                             <td>I confirm this order #Confirm</td>
-                        </tr>
-                    <!-- <tr>
-                    <td>2</td>
-                             <td>Eve</td>
-                             <td>Jackson</td>
-                             <td><form><input class="button-twitter-order" name="1" function="confirm" type="button" value="&#8634;" onclick="confirm()"/></form> </td>
-                             <td><form><input class="button-twitter-order" name="2" function="accept" type="button" value="&#10003;" onclick="accept()"/></form> </td>
-                             <td><form><input class="button-twitter-order" name="2" function="deny" type="button" value="&#10006;" onclick="decline()"/></form></td>
-                             <td><form><input class="button-twitter-order" name="2" function="delivery" type="button" value="&#128269"/></form> </td>
-                        </tr> -->
-
-                    </table>
-                </div>
-              </div>
           </section>
 
           <%= erb :footer %>
