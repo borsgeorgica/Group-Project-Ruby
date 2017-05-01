@@ -140,7 +140,7 @@ end
     
 
 get '/admin/index' do
-    
+    redirect '/login' unless session[:logged_in]
     @twitter.find_tweets("@Spicy_Slice23") #keyword as paramater
     @usernames = @twitter.get_usernames()
     @tweets_text = @twitter.get_tweets_text()
@@ -200,7 +200,6 @@ end
 
 post '/admin/index' do
     
-     redirect '/login' unless session[:logged_in]
      @button = params[:button]
      @number = params[:number]
      
