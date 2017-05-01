@@ -293,6 +293,10 @@ get '/admin/twitter' do
     erb :"admin/twitter"
 end
 
+get '/deliver' do
+    erb :deliver
+end
+
 def save_to_file 
 #     File.open("last_order.txt") do |line|
 #         line.puts $last_tweet_date.to_s

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Spicy Slice :: Delivery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="author" content="Team23" />
+        <meta http-equiv="refresh" content="30">
+
+        <!-- BOOTSTRAP CSS -->
+        <link href="../style/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MAIN STYLES CSS -->
+        <link href="../style/style.css" rel="stylesheet">
+
+        <!-- References from online -->
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Lato%7CRoboto+Slab" rel="stylesheet">
+
+        <!-- FONT ICONS -->
+        <link href="../style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- CAROUSEL SLIDERS -->
+        <link href="../style/owl.carousel.css" rel="stylesheet" type="text/css"/>
+
+
+        <!-- POPUP -->
+        <link href="../style/magnific-popup.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ANIMATE -->
+        <link href="../style/animate.min.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body>
+
+    <!-- Welcome to the panel -->
+    <section id="admin-panel-welcome">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h2 class="space-40 solidBlock">Delivery Panel</h2>
+                        </div>
+                    </div>
+
+                        <!-- ITEM 1 -->
+                        <div class="item">
+                            <div class="user-desc">
+                                <h3>
+                                  This is the delivery panel for the delivery driver, it is mobile friendly making it easy for the driver to know where to deliver the Pizza.
+                                </h3>
+                            </div>
+                        </div>
+                </div>
+            </section>
+
+        <!-- Order now information -->
+
+        <section id="Tweet-order">
+            <div class="line">
+              <h2>Delivery Requests</h2>
+            </div>
+            <div class="row">
+              <div class="twitter-orders container col-md-offset-1" style="width=100%">
+              <table>
+                 <tr>
+                    <th>Order No.</th>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Pizza</th>
+                    <th>Address</th>
+                    <th>Delivered</th>
+                  </tr>
+                  <tr>
+                     <td>1</td>
+                     <td>Jill</td>
+                     <td>09837927493</td>
+                     <td>Cheese & Tomato </td>
+                     <td> Somewhere In sheffield </td>
+                     <td><form><input class="button-twitter-order" name="1" function="accept" type="button" value="&#10003;"/></form> </td>
+                  </tr>
+              </table>
+            </div>
+            </div>
+          </section>
+
+          <%= erb :footer %>
+
+        <!-- SCRIPTS -->
+                <script src="../js/jquery-2.2.4.min.js" type="text/javascript"></script>
+                <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="../js/owl.carousel.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.nav.js" type="text/javascript"></script>
+                <script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.viewportchecker.min.js" type="text/javascript"></script>
+                <script src="../js/jquery.countTo.js" type="text/javascript"></script>
+                <script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU" async defer></script>
+
+                <!-- Loader script got help online -->
+                <script src="../js/app.js" type="text/javascript"></script>
+                <script>
+                        // Create a marker and set its position.
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: myLatLng,
+                            title: '',
+                            icon: 'img/marker1.png',
+                        });
+                    }
+                </script>
+                <script>
+                function confirm() {
+                    alert("A confirmation tweet was sent");
+                    /* This code should send a tweet to the user when completed
+                     * It's commented to prevent spam
+                     * client.update('@bors_georgica please confirm your order')
+                     */
+                }
+                function accept() {
+                    alert("An acceptance tweet was sent");
+                    /* This code should send a tweet to the user when completed
+                     * It's commented to prevent spam
+                     * client.update('@bors_georgica your order is confirmed')
+                     */
+                }
+                function decline() {
+                    alert("A decline tweet was sent");
+                    /* This code should send a tweet to the user when completed
+                     * It's commented to prevent spam
+                     * client.update('@bors_georgica We're very sorry but we have to cancel the order')
+                     */
+                }
+                </script>
+           </body>
+</html>
