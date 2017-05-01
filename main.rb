@@ -201,6 +201,7 @@ end
 
 post '/admin/index' do
     
+     redirect '/login' unless session[:logged_in]
      @button = params[:button]
      @number = params[:number]
      
