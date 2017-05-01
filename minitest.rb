@@ -3,11 +3,13 @@ require_relative "./twitter"
 require_relative "./register"
 require_relative "./login"
 
+# Could not figure out how to minitest ruby file which was not under a class
+
 class TestTwitterInteract < Minitest::Test
     
-    attr_accessor :client
-    attr_accessor :usernames
-    attr_accessor :tweets_text
+    # attr_accessor :client
+    # attr_accessor :usernames
+    # attr_accessor :tweets_text
     
     def setup
         @twitter = TwitterInteract.new
@@ -19,14 +21,15 @@ class TestTwitterInteract < Minitest::Test
     
     # Could not fix this error
     def test_find_tweets
-        assert_instance_of "User is: #{tweet.user.screen_name}", @twitter.find_tweets(keywords)
+        assert_equal "User is: #{tweet.user.screen_name}", @twitter.find_tweets(keywords)
     end
    
     # Could not fix this error
-    def test_confirmation_tweet
+    def test_send_confirmation_tweet
         assert_equal @client.update("@#{username} Please confirm your order"), @twitter.send_confirmation_tweet(username)
     end
     
+    # Expected nil
     def test_get_usernames
         assert_nil @usernames, @twitter.get_usernames()
     end
@@ -41,16 +44,16 @@ class TestTwitterInteract < Minitest::Test
     
 end
 
-class TestLogin < Minitest::Test
-    
-    def setup
-        @login = Login.new
-    end
-    
-    def test_title_is_login
-        assert_equal 'Login', @login.title
-    end
-    
-end
+# class TestLogin < Minitest::Test
+#    
+#    def setup
+#        @login = Login.new
+#    end
+#    
+#    def test_title_is_login
+#        assert_equal 'Login', @login.title
+#    end
+#    
+# end
     
     

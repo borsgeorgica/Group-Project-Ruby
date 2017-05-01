@@ -148,7 +148,7 @@ end
     
 
 get '/admin/index' do
-    
+    redirect '/login' unless session[:logged_in]
     @twitter.find_tweets("@Spicy_Slice23") #keyword as paramater
     @usernames = @twitter.get_usernames()
     @tweets_text = @twitter.get_tweets_text()
@@ -160,7 +160,6 @@ get '/admin/index' do
     (0...@usernames.length).each do |i|
         if(@usernames[i]!=nil)
             if(check_user_exists(@db,@usernames[i])!= true)
-                puts "Foreign user has been found"
  
                 @usernames.delete_at(i)
                 @tweets_text.delete_at(i)
