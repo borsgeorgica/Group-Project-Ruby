@@ -65,7 +65,7 @@
         		<div class="container text-center ">
               <br></br>
         			<p> Spicy slice is a restaurant based on a twitter ordering system which is one of its kind. We came up with this unique idea to allow customers to quickly order a pizza with the least possible problems! </p>
-             <p id="second-text">To make an order, you need to go to twitter and tweet in the following format "<span>@spicy_slice23 [size] [pizza type] #order</span>". For example "@spicy_slice23 Large Tomato & Cheese Pizza #order"</p>
+             <p id="second-text">To make an order, you need to go to twitter and tweet in the following format "<span>@Spicy_Slice23 [size] [pizza type] #order</span>". For example "@Spicy_Slice23 Large Tomato & Cheese Pizza #order"</p>
               <p>
                Here is a list of hashtags which will help you reach out to us!</p>
                 <p>#Order - To make a new order</p>
@@ -106,9 +106,11 @@
               <br></br>
 
               <!-- If no order then use this div -->
+              <% if @user_orders = true %>
               <div class="text-center container menu-desc space-10">
                 <h3> <span> You do not have any orders yet! Go on to twitter and order! </span> </h3>
               </div>
+              <% end %>
 
               <!-- If pizza orders then use this to display their order -->
               <% for i in 0...arraySize %>
@@ -118,7 +120,6 @@
                      	<div class="menu-desc">
                      	<div>
                          	<h3><%= @user_orders[i][5]%></h3>
-                          	
                           	<p>Date: <%= @user_orders[i][4]%>
                           	<p>Your selected size :<%= @user_orders[i][6]%></p>
                       	</div>
