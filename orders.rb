@@ -24,6 +24,13 @@ def add_feedback_tweet(db, username, message, date)
         [date, username, message])
 end
 
+def add_competition_tweet(db, username,tweet, date)
+    db.execute(
+        'INSERT INTO competition VALUES (?, ?, ?)',
+        [date, username, tweet])
+end
+
+
 def get_no_of_orders(db)
     no_of_rows = db.get_first_value(
         'SELECT COUNT(*) FROM orders')
@@ -120,6 +127,12 @@ def get_feedback_tweets(db)
     
 end
 
+def get_competition_tweets(db)
+
+    return db.execute('SELECT * FROM competition')
+   
+end
+
 def get_accepted_orders(db)
     status_unconfirmed = 'unconfirmed'
     status_confirmed = 'confirmed'
@@ -191,3 +204,4 @@ def get_pizza_size(pizza)
     
     return size   
 end
+
