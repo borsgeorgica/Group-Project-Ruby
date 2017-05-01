@@ -64,7 +64,7 @@ post '/register' do
     @contact_number = params[:number].strip
     @storelocation = params[:location].strip
     @address = params[:address].strip
-    @postcode = param[:postcode]
+    @postcode = params[:postcode]
     
     if(register_user(@db,@username,@name,@surname,@email,@postcode, @password,@contact_number,@storelocation,@address))
         @registersuccess = true
